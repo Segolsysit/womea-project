@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- kkkkkk -->
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -126,7 +127,7 @@
         function signup() {
             // e.preventDefault()
             const name = document.getElementById('advname').value;
-            const email = document.getElementById('advemail').value;
+            const email = document.getElementById('advemail').value.toLowerCase();
             const password = document.getElementById('advpassword').value;
             const course = document.getElementById('course').value;
             const number = document.getElementById('number').value;
