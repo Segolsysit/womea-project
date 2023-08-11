@@ -61,7 +61,7 @@
                                 <li class="has-submenu">
                                     <a href="index.html">Home</a>
                                 </li>
-                                <li class="has-submenu active">
+                                <li class="has-submenu ">
                                     <a href="index.html">Crash Course <i class="fas fa-chevron-down"></i></a>
                                     <ul class="submenu">
                                         <li><a href="course-details.html">Aari work</a></li>
@@ -71,7 +71,7 @@
                                         <li><a href="course-details.html">Fasion designing</a></li>
                                     </ul>
                                 </li>
-                                <li class="has-submenu ">
+                                <li class="has-submenu active">
                                     <a href="index.html">Advanced Course <i class="fas fa-chevron-down"></i></a>
                                     <ul class="submenu">
                                         <li><a href="advanced-course.html">Aari work</a></li>
@@ -719,8 +719,9 @@
                             usersRef.orderByChild("email").equalTo(userEmail).once("value", function (snapshot) {
                                 if (snapshot.exists()) {
                                     console.log("Email exists in the database");
+                                    console.log(snapshot);
                                     // alert("you already pay for this course ")
-                                    window.location = "advanced-watch.html"
+                                    // window.location = "advanced-watch.html"
 
                                 }
                                 else {

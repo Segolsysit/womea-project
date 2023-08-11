@@ -408,6 +408,51 @@
 
     <script>
 
+        let userlink = document.getElementById('userlink')
+        let signoutlink = document.getElementById('signoutlink')
+        var currentuser = null
+        // const user = firebase.auth().currentUser;
+
+        function getusername() {
+            // const user = firebase.auth().currentUser;
+            // if (user !== null) {
+            //     const username = user.Username;
+            // }
+
+            currentuser = sessionStorage.getItem('advuser')
+        }
+
+        function logout() {
+            sessionStorage.removeItem('advuser')
+            window.location = "index.html"
+        }
+        window.onload = function () {
+            getusername();
+            if (currentuser === null) {
+                window.location = "login.html"
+                // userlink.innerText = "Login"
+                // userlink.classList.replace("nav-link", "btn")
+                // userlink.classList.add("btn-primary")
+                // userlink.href = "login.html"
+
+                // signoutlink.innerText = "Register"
+                // signoutlink.classList.replace("nav-link", "btn")
+                // signoutlink.classList.add("btn-success")
+                // signoutlink.href = "register.html"
+            }
+            else {
+                userlink.innerText = "My DashBoard"
+                userlink.classList.replace("nav-link", "btn")
+                userlink.classList.add("btn-primary")
+                userlink.href = "deposit-student-dashboard.html"
+
+                signoutlink.innerText = "sign out"
+                signoutlink.classList.replace("nav-link", "btn")
+                signoutlink.classList.add("btn-success")
+                signoutlink.href = "javascript:logout()"
+            }
+        }
+
         async function FetchUrls() {
             return [
                 { src: "https://drive.google.com/file/d/10x_TzjMWbbErddLktLSib2jAzSsJWfJg/preview" },
@@ -532,51 +577,9 @@
             e.preventDefault();
         }, false);
 
-        let userlink = document.getElementById('userlink')
-        let signoutlink = document.getElementById('signoutlink')
-        var currentuser = null
-        // const user = firebase.auth().currentUser;
 
-        function getusername() {
-            // const user = firebase.auth().currentUser;
-            // if (user !== null) {
-            //     const username = user.Username;
-            // }
 
-            currentuser = sessionStorage.getItem('advuser')
-        }
 
-        function logout() {
-            sessionStorage.removeItem('advuser')
-            window.location = "index.html"
-        }
-
-        window.onload = function () {
-            getusername();
-            if (currentuser === null) {
-                window.location = "login.html"
-                // userlink.innerText = "Login"
-                // userlink.classList.replace("nav-link", "btn")
-                // userlink.classList.add("btn-primary")
-                // userlink.href = "login.html"
-
-                // signoutlink.innerText = "Register"
-                // signoutlink.classList.replace("nav-link", "btn")
-                // signoutlink.classList.add("btn-success")
-                // signoutlink.href = "register.html"
-            }
-            else {
-                userlink.innerText = "My DashBoard"
-                userlink.classList.replace("nav-link", "btn")
-                userlink.classList.add("btn-primary")
-                userlink.href = "deposit-student-dashboard.html"
-
-                signoutlink.innerText = "sign out"
-                signoutlink.classList.replace("nav-link", "btn")
-                signoutlink.classList.add("btn-success")
-                signoutlink.href = "javascript:logout()"
-            }
-        }
     </script>
 
     <script src="assets/js/script.js"></script>

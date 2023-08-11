@@ -8,6 +8,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="admin.css">
+    <style>
+        .tab {
+            margin-top: 10%;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+
+        }
+
+        th {
+            background-color: #673ab7;
+            color: white;
+            text-align: center;
+
+        }
+
+        /* tr:nth-child(even) {
+            background-color: #dddddd;
+        } */
+
+        #table-container {
+            position: relative;
+            top: 0px;
+        }
+    </style>
     <script src="jquery-3.6.4.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-firestore-compat.js"></script>
@@ -18,6 +56,14 @@
     <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-functions.js"></script> -->
     <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-app.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/9.19.0/firebase-database-compat.js"> </script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.0/firebase-auth.js"></script>
 </head>
 
 <body>
@@ -38,7 +84,7 @@
     <button onclick="signup()">register</button> -->
 
 
-    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    <!-- <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
         x="0px" y="0px" width="800px" height="600px" viewBox="0 0 800 600" enable-background="new 0 0 800 600"
         xml:space="preserve">
         <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="174.7899" y1="186.34" x2="330.1259" y2="186.34"
@@ -73,46 +119,94 @@
             <stop offset="1" style="stop-color:#DF3D8E" />
         </linearGradient>
         <circle fill="url(#SVGID_5_)" cx="435.095" cy="184.986" r="63.504" />
-    </svg>
+    </svg> -->
 
+    <div style="display: flex; flex-direction: column; align-items: center;">
 
-    <div class="container">
-        <h2>Register</h2>
-        <form>
-            <input type="text" id="advname" class="name" placeholder="name">
-            <br />
-            <input type="text" id="advemail" class="email" placeholder="email">
-            <br />
-            <input type="text" id="advpassword" class="pwd" placeholder="password">
-            <br />
-            <input type="text" id="number" class="number" placeholder="number">
-            <br />
-            <select id="course" class="number">
-                <option value="course 1">course 1</option>
-                <option value="course 2">course 2</option>
-                <option value="course 3">course 3</option>
-                <option value="course 4">course 4</option>
-            </select>
-        </form>
-        <br /><br />
-        <button class="register" onclick="signup()">
-            <span>register</span>
-        </button>
-        <!-- <button class="signin">
+        <div class="container">
+            <h2>Register</h2>
+            <form id="form">
+                <input type="text" id="advname" class="name" placeholder="name">
+                <br />
+                <input type="text" id="advemail" class="email" placeholder="email">
+                <br />
+                <input type="text" id="advpassword" class="pwd" placeholder="password">
+                <br />
+                <input type="text" id="number" class="number" placeholder="number">
+                <br />
+                <select id="course" class="number">
+                    <option value="course 1">course 1</option>
+                    <option value="course 2">course 2</option>
+                    <option value="course 3">course 3</option>
+                    <option value="course 4">course 4</option>
+                </select>
+            </form>
+            <br /><br />
+            <button class="register" onclick="signup()">
+                <span>register</span>
+            </button>
+            <!-- <button class="signin">
     <span>sign in</span>
   </button> -->
-        <h3>your registration is complete ! </h3>
-        <h3>your sign in is complete !</h3>
-        <div class="reg"></div>
-        <div class="sig"></div>
+            <h3>your registration is complete ! </h3>
+            <h3>your sign in is complete !</h3>
+            <div class="reg"></div>
+            <div class="sig"></div>
 
 
+
+        </div>
+        <br>
+
+    </div>
+    <div style="width: 100%; overflow-x: scroll;">
+
+        <table id="dynamic-table" style="position: relative;background-color: white; text-align: center;">
+            <thead>
+                <tr>
+                    <th>S.No</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Course</th>
+                    <th>Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table rows will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
 
     </div>
 
+    <!-- <div id="table-container"></div> -->
 
     <script>
+        window.onload = window.scrollTo({
+            left: 0,
+            top: 0,
+            behavior: "smooth" // Optional, adds smooth scrolling animation
+        });
+        // window.screenTop()
+        let currentUser;
+        function getusername() {
+            // const user = firebase.auth().currentUser;
+            // if (user !== null) {
+            //     const username = user.Username;
+            // }
 
+            currentUser = localStorage.getItem("isLoggedIn");
+        }
+
+        window.onload = function () {
+            getusername();
+            // let AdminToken = 
+
+            if (currentUser === null) {
+                window.location = "admin-login.html"
+            }
+        }
         const firebaseApp = firebase.initializeApp({
             apiKey: "AIzaSyAFdtO7NYgHb4DbWXfirZpJpA8UDrMfbKs",
             authDomain: "advanced-course-data-base.firebaseapp.com",
@@ -124,13 +218,90 @@
 
         const auth = firebaseApp.auth();
 
+
+        const ref = [
+            { course: "course 1" },
+            { course: "course 2" },
+            { course: "course 3" },
+            { course: "course 4" },
+
+        ]
+        var i = 1;
+
+        for (const iterator of ref) {
+            const arr = [];
+            const structure = [];
+            var usersRef = firebase.database().ref(iterator.course);
+
+            // usersRef = firebase.database().ref("course 3");
+
+            console.log(usersRef);
+            usersRef.once('value')
+                .then(snapshot => {
+                    var data = snapshot.val();
+                    snapshot.forEach(childSnap => {
+                        arr.push(childSnap.key);
+
+                    });
+                    console.log(data); // Data retrieved from the 'users' location
+                    console.log(arr);
+
+
+                    function print() {
+                        for (let i = 0; i < arr.length; i++) {
+                            const datas = {
+                                email: data[arr[i]].email,
+                                course: data[arr[i]].course,
+                                name: data[arr[i]].name,
+                                number: data[arr[i]].number,
+                                password: data[arr[i]].password
+                            }
+                            structure.push(datas);
+                            console.log(structure);
+                            console.log(data[arr[i]].email);
+                        }
+                    }
+                    print();
+
+                    function populateTable(str) {
+                        const tableBody = document.querySelector("#dynamic-table tbody");
+                        console.log(str);
+
+                        str.forEach(item => {
+                            const row = document.createElement("tr");
+                            row.innerHTML = `
+            <td>${i++}</td>
+            <td>${item.name}</td>
+            <td>${item.email}</td>
+            <td>${item.password}</td>
+            <td>${item.course}</td>
+            <td>${item.number}</td>
+
+        `;
+                            tableBody.appendChild(row);
+                        });
+                    }
+
+                    window.load = populateTable(structure);
+
+                    // console.log(print);
+                    // console.log(data[arr[0]].email);
+
+                })
+                .catch(error => {
+                    console.error('Error retrieving data:', error);
+                });
+            // console.log();
+
+        }
+
         function signup() {
             // e.preventDefault()
-            const name = document.getElementById('advname').value;
-            const email = document.getElementById('advemail').value.toLowerCase();
-            const password = document.getElementById('advpassword').value;
-            const course = document.getElementById('course').value;
-            const number = document.getElementById('number').value;
+            let name = document.getElementById('advname').value;
+            let email = document.getElementById('advemail').value.toLowerCase();
+            let password = document.getElementById('advpassword').value;
+            let course = document.getElementById('course').value;
+            let number = document.getElementById('number').value;
             var firebaseRef = firebase.database().ref(`${course}`)
             var coursevalue = {
                 name: name,
@@ -145,7 +316,11 @@
                 .then(function () {
                     // Signed in 
                     console.log(course);
-                    firebaseRef.push(coursevalue)
+                    firebaseRef.push(coursevalue);
+                    let res = document.getElementById("form");
+                    res.reset();
+                    alert("register successful!")
+                    window.location = "admin.html"
                     this.siblings('.reg').css({
                         'transform': 'translateY(40%) scale(5)',
                         'border-radius': '0',
@@ -158,14 +333,30 @@
                         'top': '40%',
                         'z-index': '8',
                     }).end().end();
+
                 })
                 .catch((error) => {
                     console.log(error.code);
                     console.log(error.message);
                     // ..
                 });
+
+
         }
 
+        // const dynamicData = [
+        //     // { name: "John Doe", age: 25, country: "USA" },
+        //     // { name: "Jane Smith", age: 30, country: "Canada" },
+        //     // Add more data as needed
+        // ];
+
+        // Function to create and populate the table
+
+
+        // Call the function to populate the table when the page loads
+        // setTimeout(() => {
+
+        // }, 4000);
 
     </script>
     <!-- <script src="admin.js"></script> -->
