@@ -556,6 +556,71 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-xl-3 col-lg-4 col-md-6 d-flex">
+                                        <div class="course-box course-design d-flex ">
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <a href="course-details.html">
+                                                        <img class="img-fluid" alt=""
+                                                            src="assets/img/course/course-17.jpg">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content">
+                                                    <h3 class="title"><a href="course-details.html">Learn Makeup
+                                                            Course</a></h3>
+                                                    <div class="rating-student">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <span
+                                                                class="d-inline-block average-rating"><span>4.0</span></span>
+                                                        </div>
+                                                        <div class="edit-rate">
+                                                            <a id="edit-rating">Edit rating</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="publish-rate">
+                                                        <form action="#">
+                                                            <select class="form-select" name="sellist1">
+                                                                <option>4 Out of 5</option>
+                                                                <option>3 Out of 5</option>
+                                                                <option>2 Out of 5</option>
+                                                                <option>1 Out of 5</option>
+                                                            </select>
+                                                            <div class="form-group mt-3">
+                                                                <textarea class="form-control" rows="4"
+                                                                    name="text"></textarea>
+                                                            </div>
+                                                            <div class="group-btn mb-3">
+                                                                <button type="submit"
+                                                                    class="btn btn-primary publish-btn mb-3">Publish
+                                                                    Rating</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary cancel-btn">Cancel</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                    <div class="stip-grp">
+                                                        <!-- <div class="progress-stip">
+                                                            <div class="progress-bar bg-success progress-bar-striped ">
+                                                            </div>
+                                                        </div>
+                                                        <div class="student-percent">
+                                                            <p>0% Completed</p>
+                                                        </div> -->
+                                                        <div class="start-leason d-flex align-items-center">
+                                                            <a onclick="buythiscourse10()" class="btn btn-primary">Start
+                                                                Lesson</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -987,6 +1052,33 @@
                                     console.log("Email exists in the database");
                                     // alert("you already pay for this course ")
                                     window.location = "advanced-baking-watch.html"
+
+                                }
+                                else {
+                                    alert("you can't pay for this course")
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            function buythiscourse10() {
+                const login = sessionStorage.getItem("advuser")
+
+                if (login === null) {
+                    window.location = "advanced-course-login.html"
+                }
+                else {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) {
+                            var userEmail = user.email;
+                            var usersRef = firebase.database().ref("course 10");
+                            usersRef.orderByChild("email").equalTo(userEmail).once("value", function (snapshot) {
+                                if (snapshot.exists()) {
+                                    console.log("Email exists in the database");
+                                    // alert("you already pay for this course ")
+                                    window.location = "advanced-makeup-watch.html"
 
                                 }
                                 else {
