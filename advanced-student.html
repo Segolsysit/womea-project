@@ -436,8 +436,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="product-content">
-                                                    <h3 class="title"><a href="course-details.html">Responsive Web
-                                                            Design Essentials HTML5 CSS3 ...</a></h3>
+                                                    <h3 class="title"><a href="course-details.html">Learn Beautician
+                                                            Course</a></h3>
                                                     <div class="rating-student">
                                                         <div class="rating">
                                                             <i class="fas fa-star filled"></i>
@@ -482,7 +482,7 @@
                                                             <p>0% Completed</p>
                                                         </div> -->
                                                         <div class="start-leason d-flex align-items-center">
-                                                            <a href="course-lesson.html" class="btn btn-primary">Start
+                                                            <a onclick="buythiscourse8()" class="btn btn-primary">Start
                                                                 Lesson</a>
                                                         </div>
                                                     </div>
@@ -866,6 +866,33 @@
                                     console.log("Email exists in the database");
                                     // alert("you already pay for this course ")
                                     window.location = "advanced-flowermaking-watch.html"
+
+                                }
+                                else {
+                                    alert("you can't pay for this course")
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+
+            function buythiscourse8() {
+                const login = sessionStorage.getItem("advuser")
+
+                if (login === null) {
+                    window.location = "advanced-course-login.html"
+                }
+                else {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) {
+                            var userEmail = user.email;
+                            var usersRef = firebase.database().ref("course 8");
+                            usersRef.orderByChild("email").equalTo(userEmail).once("value", function (snapshot) {
+                                if (snapshot.exists()) {
+                                    console.log("Email exists in the database");
+                                    // alert("you already pay for this course ")
+                                    window.location = "advanced-beautician-watch.html"
 
                                 }
                                 else {
