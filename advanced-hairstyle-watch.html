@@ -365,6 +365,19 @@
 
     <script>
 
+        let userlink = document.getElementById('userlink')
+        let signoutlink = document.getElementById('signoutlink')
+        var currentuser = null
+        userlink.innerText = "My DashBoard"
+        userlink.classList.replace("nav-link", "btn")
+        userlink.classList.add("btn-primary")
+        userlink.href = "deposit-student-dashboard.html"
+
+        signoutlink.innerText = "sign out"
+        signoutlink.classList.replace("nav-link", "btn")
+        signoutlink.classList.add("btn-success")
+        signoutlink.href = "javascript:logout()"
+
         async function FetchUrls() {
             return [
                 { src: "https://drive.google.com/file/d/13RHN3Sxa1DxZbIyG-I9wdl4ok6dZLYuH/preview" },
@@ -377,6 +390,60 @@
                 { src: "https://drive.google.com/file/d/1ACn8kmTt8oLBEr9ewleTbm0lPg63XsRe/preview" },
                 { src: "https://drive.google.com/file/d/1AF6aIBDRal2A7ljZLZ5zV1uoT1_qwTX0/preview" },
                 { src: "https://drive.google.com/file/d/1AI4_fMsnXpRikL2tqO6yOfnum8CRH3lM/preview" },
+                { src: "https://drive.google.com/file/d/1ANlHJsIbYows5GWAm-Bu1vXgqTCQmlYe/preview" },
+                { src: "https://drive.google.com/file/d/1BcFOQzKqECrCr5dwByIFECPRGcsC3Xji/preview" },
+                { src: "https://drive.google.com/file/d/1KyLqjkYzS9ACV-Yp9WXavHSiaeEKo4n4/preview" },
+                { src: "https://drive.google.com/file/d/18oPQ2dZxZ5fejxmph_-yzDHkGdSYMD3v/preview" },
+                { src: "https://drive.google.com/file/d/18oVbs3dZErxIBFHbfHB62D_KOFcLxeyK/preview" },
+                { src: "https://drive.google.com/file/d/18pC2ACVdpUfZ5HCR27AKpKLQxeddiwCZ/preview" },
+                { src: "https://drive.google.com/file/d/18qy5q7C0Bm3HxGT1QlB1dfw-nqlCpAew/preview" },
+                { src: "https://drive.google.com/file/d/18reFx96bBvfVphCu7Cz44ftDBsSG6ceQ/preview" },
+                { src: "https://drive.google.com/file/d/18tqSWrb_hbtDPgqTlCNiJUv5AWRKGEll/preview" },
+                { src: "https://drive.google.com/file/d/18wbbBmV9UTnA60V0lkgrs6LL-JGcTtV9/preview" },
+                { src: "https://drive.google.com/file/d/1BdKdZOibFwGFztd3hBfIxurTeZVo_m6D/preview" },
+                { src: "https://drive.google.com/file/d/1ARtnkBWTo1z8eSAm6mf7Byn3_oyMeDkT/preview" },
+                { src: "https://drive.google.com/file/d/1Kvr8Addc9mPtBvLuTLMQzQnvPvpYM9kT/preview" },
+                { src: "https://drive.google.com/file/d/19H8ZmtNqooCAt5n4PSDoqoIvFpZruKLg/preview" },
+                { src: "https://drive.google.com/file/d/1AlvDBKbc2PROf5Bt5rvLqG_Y4Ri7jZVH/preview" },
+                { src: "https://drive.google.com/file/d/1L31Ts4Jz54aJN61eTotwVgdmnznpIyU-/preview" },
+                { src: "https://drive.google.com/file/d/1As_x-qTwFfENTp_e-Se5DJr5ouz_nCKk/preview" },
+                { src: "https://drive.google.com/file/d/19PD6NKVfo8WEkgXwM33JnBvNUTvfBr1b/preview" },
+                { src: "https://drive.google.com/file/d/1BEdGDYiR4UUvIsPjXy8fA11n1V1Z350F/preview" },
+                { src: "https://drive.google.com/file/d/1AwvlFYZ4Cecw0xYEj2-LnnNbWn2FsnSg/preview" },
+                { src: "https://drive.google.com/file/d/1B-m_6dGlrxzN57zWaTa_ESxxZrg5uox9/preview" },
+                { src: "https://drive.google.com/file/d/1L4JhbR5YWUVuFxXSnGD8h70dfVZpwtzg/preview" },
+                { src: "https://drive.google.com/file/d/1B4DXpDZewDvISE-V6tQctescn3QulAbT/preview" },
+                { src: "https://drive.google.com/file/d/1CWStxYNEaskfMRrB2XV8MC5WFjdh5by0/preview" },
+                { src: "https://drive.google.com/file/d/1L6ZtXfGB2MwHyFUVsQf0mCByerhKB4iD/preview" },
+                { src: "https://drive.google.com/file/d/19dWm4lS2Cd7n0gSm3OOfBJPVJy0xPYgu/preview" },
+                { src: "https://drive.google.com/file/d/1MpII9oWFUh_7zIc0HmP1DfmX2BaTe8W8/preview" },
+                { src: "https://drive.google.com/file/d/1MtHzlasAIqEYPilHjRnbZdrzorpaIiXY/preview" },
+                { src: "https://drive.google.com/file/d/1BM821Oy70DTnSgcrYo8Z_2Ih1Kwyn_Ed/preview" },
+                { src: "https://drive.google.com/file/d/1AbF2OKGhgvCRGL6cCKWaNgLKOMnXaN1Y/preview" },
+                { src: "https://drive.google.com/file/d/1AXFN9v5TYXuWePlr55EZSVhiBNN_1ACF/preview" },
+                { src: "https://drive.google.com/file/d/19XCFqDRmUAUrG3zyvGITycPSbhxUq85t/preview" },
+                { src: "https://drive.google.com/file/d/1LXnwmuxtD42_K9kCrK_5S9BKuR1uJIil/preview" },
+                { src: "https://drive.google.com/file/d/1LWXbe5O7akK-PqWvkfISOa4movpUGhPr/preview" },
+                { src: "https://drive.google.com/file/d/1LQmjy4gdQx4r_DrQsheE2AotfEPBMQwj/preview" },
+                { src: "https://drive.google.com/file/d/1LYiP95sG3Fmfoae023_G_EJ5ZmnmED0h/preview" },
+                { src: "https://drive.google.com/file/d/1CWPZ4pbOSPq2MjFfVGfPu994mvFOG3fK/preview" },
+                { src: "https://drive.google.com/file/d/19xJMWdKN_Ylk8l-vLe0DBmaTP0nsJHv4/preview" },
+                { src: "https://drive.google.com/file/d/1LfPfmMqOPj-FJQA5rHZ0cj-O8uQKQxeO/preview" },
+                { src: "https://drive.google.com/file/d/1Lgev3oBYXvHYphIATuq1oXiQIeGHbp5k/preview" },
+                { src: "https://drive.google.com/file/d/1Ahgyf5v0xYfj9qD6I1JRwlmgSsFVQ-nK/preview" },
+                { src: "https://drive.google.com/file/d/1LjM5NOiV6aKibZbHshlkn4wGOMRid09j/preview" },
+                { src: "https://drive.google.com/file/d/1LoBofQLjAUwJ7mOecYBcxoVG8HMUWbrg/preview" },
+                { src: "https://drive.google.com/file/d/1MvioNmHMKVtl_PEruhqzj7sRGztTXDhv/preview" },
+                { src: "https://drive.google.com/file/d/1Lv7SMHM0W-pX0qc8O-UDW_RHHWBHJq13/preview" },
+                { src: "https://drive.google.com/file/d/1Mzjz7k9eldhRixGt5WY6flsR-177Wc0p/preview" },
+                { src: "https://drive.google.com/file/d/1AdM7PU6dM8R0ZelVusirqy3cKmyN3eXR/preview" },
+                { src: "https://drive.google.com/file/d/1Lz04YEFQsetR7ggnPmmp25jVdn790hoy/preview" },
+                { src: "https://drive.google.com/file/d/1N1FDVQzdoNUaD4DpflW4L6FdnprKEYrw/preview" },
+                { src: "https://drive.google.com/file/d/1CRwfhpGdbS0yx_OznQp-Qb9zt-brvDA4/preview" },
+                { src: "https://drive.google.com/file/d/1BXBmMGzQ0o-RHe32IHYCBkLfPsZ0Dv2P/preview" },
+                { src: "https://drive.google.com/file/d/18tvM_Is09O53M-B-6e-5QIg5TDT19Jxv/preview" },
+                { src: "https://drive.google.com/file/d/1Ci-vWxaMyATuURgb45uLURRGOM57zAQs/preview" },
+                { src: "https://drive.google.com/file/d/1CbR9-RWiOiChm_Zpc_a8A1g_e3kHDSoq/preview" }
             ]
 
         }
@@ -420,6 +487,60 @@
                 { tit: "B7-center layer" },
                 { tit: "B8-zig zag hairstyle " },
                 { tit: "B9-messy flower " },
+                { tit: "B10-Side messy twist" },
+                { tit: "B11-Flower bun" },
+                { tit: "B11-hair flower bun" },
+                { tit: "B12-full through " },
+                { tit: "B13-criss cross" },
+                { tit: "B15-double full through " },
+                { tit: "B16-multi loop" },
+                { tit: "B17-knot bride 1" },
+                { tit: "B18-messy bride" },
+                { tit: "B19-twisted messy bride" },
+                { tit: "B20-Bubble bride" },
+                { tit: "B21-Basket bride" },
+                { tit: "B22-dutch bride" },
+                { tit: "B23- chain bride" },
+                { tit: "B24-donut bun" },
+                { tit: "B25-low bun" },
+                { tit: "B26-french bun" },
+                { tit: "B27-bangles bride " },
+                { tit: "B28-jawery with chain" },
+                { tit: "B29-leaf" },
+                { tit: "B30-duel leaf" },
+                { tit: "B31-mermaid bride" },
+                { tit: "B32-french bride" },
+                { tit: "B33-S'bun" },
+                { tit: "B34-high bun" },
+                { tit: "B35-layered highpony" },
+                { tit: "B36-Rose bun" },
+                { tit: "B37-messy rose bun" },
+                { tit: "B38-Peacock layer" },
+                { tit: "B39-open swrill" },
+                { tit: "B40-double zig zag" },
+                { tit: "B41-layered leaf" },
+                { tit: "B42-french bride with chain" },
+                { tit: "B43-heart bride" },
+                { tit: "B44-Role bun" },
+                { tit: "B45-bun with peacock" },
+                { tit: "B46-Glam look" },
+                { tit: "B47-side knot" },
+                { tit: "B48-basket bun" },
+                { tit: "B49-bubble bun" },
+                { tit: "B50-open swrill 2" },
+                { tit: "B51-Random messy" },
+                { tit: "B52-slit bun" },
+                { tit: "B52-slit bun" },
+                { tit: "B53-bride bun" },
+                { tit: "B53-bride bun" },
+                { tit: "B54-zig zag basket" },
+                { tit: "B55-bow hairstyle" },
+                { tit: "B55-bow hairstyle" },
+                { tit: "B56-Highponytail with chain" },
+                { tit: "B57-duel peacock " },
+                { tit: "B58-knot bride 2" },
+                { tit: "B59-Mushroom bride" },
+                { tit: "B60-Side bun" },
                 { tit: " " },
                 { tit: " " }
             ]
@@ -451,9 +572,9 @@
             e.preventDefault();
         }, false);
 
-        let userlink = document.getElementById('userlink')
-        let signoutlink = document.getElementById('signoutlink')
-        var currentuser = null
+        userlink = document.getElementById('userlink')
+        signoutlink = document.getElementById('signoutlink')
+        currentuser = null
         // const user = firebase.auth().currentUser;
 
         function getusername() {
