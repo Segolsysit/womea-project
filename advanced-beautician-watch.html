@@ -364,7 +364,19 @@
     <script src="assets/plugins/swiper/js/swiper.min.js"></script>
 
     <script>
+        let userlink = document.getElementById('userlink')
+        let signoutlink = document.getElementById('signoutlink')
+        var currentuser = null
 
+        userlink.innerText = "My DashBoard"
+        userlink.classList.replace("nav-link", "btn")
+        userlink.classList.add("btn-primary")
+        userlink.href = "deposit-student-dashboard.html"
+
+        signoutlink.innerText = "sign out"
+        signoutlink.classList.replace("nav-link", "btn")
+        signoutlink.classList.add("btn-success")
+        signoutlink.href = "javascript:logout()"
         async function FetchUrls() {
             return [
                 { src: "https://drive.google.com/file/d/10H8p_6PTIADIBi72XfGgABzwOccoN3Y5/preview" },
@@ -377,10 +389,18 @@
                 { src: "https://drive.google.com/file/d/10i864NI7q1D8u_hGFFLVbBzfiZwWp6d4/preview" },
                 { src: "https://drive.google.com/file/d/10l8GCXM04mSvKhRICk-dUm_IcYiai1nl/preview" },
                 { src: "https://drive.google.com/file/d/10o0UY1oE1cKRW3Xf3Wm12TRcS9OYei1M/preview" },
-                // { src: "https://drive.google.com/file/d/100Lg4EKfbB5jDA7bI5mrKzF88YY9UO17/preview" },
-                // { src: "https://drive.google.com/file/d/1-pamUva9V_WN6DZ9QuSjGtStrrcBEZ2b/preview" },
-                // { src: "https://drive.google.com/file/d/1AliNQSrYDMDEdsP2napcOTQg2UUIwWay/preview" },
-                // { src: "https://drive.google.com/file/d/1wcNE0MVKeAc6o7_6v30Qr1kd6kkYKSXz/preview" }
+                { src: "https://drive.google.com/file/d/10mB7dNL2mMkObOGqMymKD9Kt8HdkFi8o/preview" },
+                { src: "https://drive.google.com/file/d/10tWmUDEnlKuPErrDdN30p3cjgh4MmGqV/preview" },
+                { src: "https://drive.google.com/file/d/16-JuxV4sscGvPYYD_SoJV_1galV-HT2j/preview" },
+                { src: "https://drive.google.com/file/d/163fow1NwUVBO-g07SOuxN7LHXcWBb1XW/preview" },
+                { src: "https://drive.google.com/file/d/17CQnKT7t3Lj6gjp9hGqeCrEnPzJsI68N/preview" },
+                { src: "https://drive.google.com/file/d/1A_6vdXoV-TfKtj9mhOEc7Jh9Kv9ldDUD/preview" },
+                { src: "https://drive.google.com/file/d/1AawBDSzAQlplNpDikPyMf-PzBhiRXNyD/preview" },
+                { src: "https://drive.google.com/file/d/1B56M7mtNhABlo-1mzaee3zoXJkxU3Zlq/preview" },
+                { src: "https://drive.google.com/file/d/1K2WY5kPbUa1MfXVKcv-K6CiPt1x7Z9yX/preview" },
+                { src: "https://drive.google.com/file/d/18QTN-hObtJTew8fb5vHbyrJn2_84gbjt/preview" },
+                { src: "https://drive.google.com/file/d/17mxin7m9u6GCGIZYO4g_znxMnbYMxDSE/preview" },
+                { src: "https://drive.google.com/file/d/18AeWRuMizw3fl6OpXD0oHQCjNeV97OgT/preview" }
             ]
 
         }
@@ -424,10 +444,18 @@
                 { tit: "Wax for hand" },
                 { tit: "Wax for leg" },
                 { tit: "Manicure pedicure products knowledge " },
-                // { tit: "No 11 Jadai mattai" },
-                // { tit: "No 12 Jadai net" },
-                // { tit: "products knowledge" },
-                // { tit: "Spraying Techniques" },
+                { tit: "Manicure" },
+                { tit: "Pedicure " },
+                { tit: "hot oil massage" },
+                { tit: "HAIR SPA" },
+                { tit: "Hair dye" },
+                { tit: "STRAIGHTENING THEORY" },
+                { tit: "Hair straightening part 1" },
+                { tit: "Hair straightening part 2" },
+                { tit: "keratin video" },
+                { tit: "Can can" },
+                { tit: "can can front" },
+                { tit: "Traditional saree draping " },
                 { tit: " " },
                 { tit: " " }
             ]
@@ -459,9 +487,9 @@
             e.preventDefault();
         }, false);
 
-        let userlink = document.getElementById('userlink')
-        let signoutlink = document.getElementById('signoutlink')
-        var currentuser = null
+        userlink = document.getElementById('userlink')
+        signoutlink = document.getElementById('signoutlink')
+        currentuser = null
         // const user = firebase.auth().currentUser;
 
         function getusername() {
