@@ -364,6 +364,20 @@
     <script src="assets/plugins/swiper/js/swiper.min.js"></script>
 
     <script>
+        let userlink = document.getElementById('userlink')
+        let signoutlink = document.getElementById('signoutlink')
+        var currentuser = null
+        // const user = firebase.auth().currentUser;
+
+        userlink.innerText = "My DashBoard"
+        userlink.classList.replace("nav-link", "btn")
+        userlink.classList.add("btn-primary")
+        userlink.href = "deposit-student-dashboard.html"
+
+        signoutlink.innerText = "sign out"
+        signoutlink.classList.replace("nav-link", "btn")
+        signoutlink.classList.add("btn-success")
+        signoutlink.href = "javascript:logout()"
 
         async function FetchUrls() {
             return [
@@ -488,9 +502,9 @@
             e.preventDefault();
         }, false);
 
-        let userlink = document.getElementById('userlink')
-        let signoutlink = document.getElementById('signoutlink')
-        var currentuser = null
+        // let userlink = document.getElementById('userlink')
+        // let signoutlink = document.getElementById('signoutlink')
+        // var currentuser = null
         // const user = firebase.auth().currentUser;
 
         function getusername() {

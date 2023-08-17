@@ -364,7 +364,17 @@
     <script src="assets/plugins/swiper/js/swiper.min.js"></script>
 
     <script>
+        let userlink = document.getElementById('userlink')
+        let signoutlink = document.getElementById('signoutlink')
+        userlink.innerText = "My DashBoard"
+        userlink.classList.replace("nav-link", "btn")
+        userlink.classList.add("btn-primary")
+        userlink.href = "deposit-student-dashboard.html"
 
+        signoutlink.innerText = "sign out"
+        signoutlink.classList.replace("nav-link", "btn")
+        signoutlink.classList.add("btn-success")
+        signoutlink.href = "javascript:logout()"
         async function FetchUrls() {
             return [
                 { src: "https://drive.google.com/file/d/11VaO5KPeSwLxyW1huadk2bI8u_7cOD5h/preview" },

@@ -364,7 +364,18 @@
     <script src="assets/plugins/swiper/js/swiper.min.js"></script>
 
     <script>
+        let userlink = document.getElementById('userlink')
+        let signoutlink = document.getElementById('signoutlink')
+        var currentuser = null
+        userlink.innerText = "My DashBoard"
+        userlink.classList.replace("nav-link", "btn")
+        userlink.classList.add("btn-primary")
+        userlink.href = "deposit-student-dashboard.html"
 
+        signoutlink.innerText = "sign out"
+        signoutlink.classList.replace("nav-link", "btn")
+        signoutlink.classList.add("btn-success")
+        signoutlink.href = "javascript:logout()"
         async function FetchUrls() {
             return [
                 { src: "https://drive.google.com/file/d/1sW8Ox1biEIoah2SToed-OhOkgqy7kbuP/preview" },
@@ -377,10 +388,27 @@
                 { src: "https://drive.google.com/file/d/1stemkvoDJ8-9Gd_wZbJA4YFNR_ud_qab/preview" },
                 { src: "https://drive.google.com/file/d/1stjRVIAnSWelI8qee-y2efuDHwBp07fu/preview" },
                 { src: "https://drive.google.com/file/d/1rDfilKvAl1EHXbqSq7awM5qeOi504tSq/preview" },
-                // { src: "https://drive.google.com/file/d/100Lg4EKfbB5jDA7bI5mrKzF88YY9UO17/preview" },
-                // { src: "https://drive.google.com/file/d/1-pamUva9V_WN6DZ9QuSjGtStrrcBEZ2b/preview" },
-                // { src: "https://drive.google.com/file/d/1AliNQSrYDMDEdsP2napcOTQg2UUIwWay/preview" },
-                // { src: "https://drive.google.com/file/d/1wcNE0MVKeAc6o7_6v30Qr1kd6kkYKSXz/preview" }
+                { src: "https://drive.google.com/file/d/1roq2TwpghzaoLfDBdFXXyVJRZsGDxoU4/preview" },
+                { src: "https://drive.google.com/file/d/103ORmFHl_dzMpfkYKmuSx9TyRwWUpjq4/preview" },
+                { src: "https://drive.google.com/file/d/1PCSXOmCddNBkXt0zdmn_dQZ90_iJa3Bu/preview" },
+                { src: "https://drive.google.com/file/d/1PGIrrC_m6n_ygqu5upMRgFdPBuTrZWG8/preview" },
+                { src: "https://drive.google.com/file/d/1-UMuhmROkgF4ezNezTGaTYgUqgjVD2W_/preview" },
+                { src: "https://drive.google.com/file/d/1-eQGopWm2ebWtWGBs6PpndWlPtpBKERP/preview" },
+                { src: "https://drive.google.com/file/d/1-eahqIntLAC4nm6fsxtXaWdyzXf0kWVf/preview" },
+                { src: "https://drive.google.com/file/d/1-grhfhNxH9plCtxgNYsOouwncmPaDusM/preview" },
+                { src: "https://drive.google.com/file/d/1-ju32WBWVVtkDOKClXPQYy_o-yCObKNo/preview" },
+                { src: "https://drive.google.com/file/d/1-lC_NsLWdG16PYstKddaYM2qK0e3z9ox/preview" },
+                { src: "https://drive.google.com/file/d/184U_mvvfbYCqvuhhwEtcjBjEb0AYOumU/preview" },
+                { src: "https://drive.google.com/file/d/18BisWZoyQHM0p9nSamrJZ0nQh2C0IKkR/preview" },
+                { src: "https://drive.google.com/file/d/18PI4FYM8zHoiaVa58IqPOJQ_w42TVmTm/preview" },
+                { src: "https://drive.google.com/file/d/18PK88rBQSukJO7f0O2jeio5S8zRTkWaX/preview" },
+                { src: "https://drive.google.com/file/d/18Q0Bfj4sgkk69TJYhBp0BfuRVanE5RsA/preview" },
+                { src: "https://drive.google.com/file/d/18QA7pgVoRPY6HqLqf9u4Y6jmfzyDR8xT/preview" },
+                { src: "https://drive.google.com/file/d/18RReUKCpa-144q8El_zGA901gxU4XTAI/preview" },
+                { src: "https://drive.google.com/file/d/18_sFrs8dIb9lSTA6j7A5Jnw_gAVlRZNx/preview" },
+                { src: "https://drive.google.com/file/d/18c8tL6j2aAypH9kCZy-PcPhhuFOigeTY/preview" },
+                { src: "https://drive.google.com/file/d/18d7IIx4CCvnQJWsWHOHUpY3rHBc7k8AM/preview" },
+                { src: "https://drive.google.com/file/d/1Pq1SMI1bHZ86PAklCJWL6BcoDgkB844o/preview" }
             ]
 
         }
@@ -424,10 +452,27 @@
                 { tit: "08 otg knowledge" },
                 { tit: "09 refrigerator knowledge" },
                 { tit: "10 vanilla sponge " },
-                // { tit: "No 11 Jadai mattai" },
-                // { tit: "No 12 Jadai net" },
-                // { tit: "products knowledge" },
-                // { tit: "Spraying Techniques" },
+                { tit: "11 chocolate sponge" },
+                { tit: " 12-glaze cake" },
+                { tit: "13-White Forest" },
+                { tit: "14-Black Forest" },
+                { tit: "chocolate  01" },
+                { tit: "chocolate 02" },
+                { tit: "chocolate 03" },
+                { tit: "chocolate 04" },
+                { tit: "chocolate 05" },
+                { tit: "chocolate 06" },
+                { tit: "chocolate 07" },
+                { tit: "chocolate 08" },
+                { tit: "chocolate 09" },
+                { tit: "chocolate 10" },
+                { tit: "chocolate 11" },
+                { tit: "chocolate 12" },
+                { tit: "chocolate 13" },
+                { tit: "chocolate 14" },
+                { tit: "chocolate 15" },
+                { tit: "chocolate 16" },
+                { tit: "wiping cream " },
                 { tit: " " },
                 { tit: " " }
             ]
@@ -459,9 +504,9 @@
             e.preventDefault();
         }, false);
 
-        let userlink = document.getElementById('userlink')
-        let signoutlink = document.getElementById('signoutlink')
-        var currentuser = null
+        userlink = document.getElementById('userlink')
+        signoutlink = document.getElementById('signoutlink')
+        currentuser = null
         // const user = firebase.auth().currentUser;
 
         function getusername() {

@@ -413,6 +413,15 @@
         var currentuser = null
         // const user = firebase.auth().currentUser;
 
+        userlink.innerText = "My DashBoard"
+        userlink.classList.replace("nav-link", "btn")
+        userlink.classList.add("btn-primary")
+        userlink.href = "deposit-student-dashboard.html"
+
+        signoutlink.innerText = "sign out"
+        signoutlink.classList.replace("nav-link", "btn")
+        signoutlink.classList.add("btn-success")
+        signoutlink.href = "javascript:logout()"
         function getusername() {
             // const user = firebase.auth().currentUser;
             // if (user !== null) {

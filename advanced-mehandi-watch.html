@@ -365,6 +365,20 @@
 
     <script>
 
+        let userlink = document.getElementById('userlink')
+        let signoutlink = document.getElementById('signoutlink')
+        var currentuser = null
+        // const user = firebase.auth().currentUser;
+
+        userlink.innerText = "My DashBoard"
+        userlink.classList.replace("nav-link", "btn")
+        userlink.classList.add("btn-primary")
+        userlink.href = "deposit-student-dashboard.html"
+
+        signoutlink.innerText = "sign out"
+        signoutlink.classList.replace("nav-link", "btn")
+        signoutlink.classList.add("btn-success")
+        signoutlink.href = "javascript:logout()"
         async function FetchUrls() {
             return [
                 { src: "https://drive.google.com/file/d/1v4dYeo59iHxWTq5tBjG8-y0ZA87i_2lP/preview" },
@@ -451,9 +465,9 @@
             e.preventDefault();
         }, false);
 
-        let userlink = document.getElementById('userlink')
-        let signoutlink = document.getElementById('signoutlink')
-        var currentuser = null
+        userlink = document.getElementById('userlink')
+        signoutlink = document.getElementById('signoutlink')
+        currentuser = null
         // const user = firebase.auth().currentUser;
 
         function getusername() {
