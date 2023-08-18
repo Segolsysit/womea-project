@@ -7515,7 +7515,7 @@ template {
   .sidebar {
     margin-left: -300px;
     padding: 0;
-    z-index: 1099;
+    z-index: 0;
     background: transparent;
   }
 
@@ -9739,7 +9739,7 @@ header .header_inner,
 .course-watch .sidebar .btn-close-mobi::before {
   font-family: "Feather-Icons";
   font-size: 22px;
-  content: '\e98f';
+  /* content: '\e98f'; */
   line-height: 30px;
   top: 50%;
   left: 50%;
@@ -9837,7 +9837,7 @@ header .header_inner,
   }
 
   .course-watch.is-active .btn-close-mobi::before {
-    content: '\ea02';
+    /* content: '\ea02'; */
   }
 }
 
