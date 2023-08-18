@@ -246,7 +246,53 @@
                                                 </div>
                                             </div>
                                         </div>
+
                                     </div>
+
+                                    <div class="col-xl-3 col-lg-4 col-md-6 d-flex">
+                                        <div class="course-box course-design d-flex ">
+                                            <div class="product">
+                                                <div class="product-img">
+                                                    <a href="course-details.html">
+                                                        <img class="img-fluid" alt="" src="assets/img/aari.jpg">
+                                                    </a>
+                                                </div>
+                                                <div class="product-content">
+                                                    <h3 class="title"><a href="course-details.html">Aari work Course (telugu)</a>
+                                                    </h3>
+                                                    <div class="rating-student">
+                                                        <div class="rating">
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star filled"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <span class="d-inline-block average-rating"><span>4.0</span>
+                                                            </span>
+                                                        </div>
+                                                        <div class="edit-rate">
+                                                            <a href="javascript:;">Edit rating</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="progress-stip">
+                                                        <div class="progress-bar bg-success progress-bar-striped ">
+                                                        </div>
+                                                    </div>
+                                                    <div class="student-percent">
+                                                        <p>0% Completed</p>
+                                                    </div> -->
+                                                    <div class="start-leason d-flex align-items-center">
+                                                        <a onclick="buythiscourse11()" class="btn btn-primary">Start
+                                                            Lesson</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+
+
+
                                     <div class="col-xl-3 col-lg-4 col-md-6 d-flex">
                                         <div class="course-box course-design d-flex ">
                                             <div class="product">
@@ -931,6 +977,37 @@
                         if (user) {
                             var userEmail = user.email;
                             var usersRef = firebase.database().ref("course 2");
+                            usersRef.orderByChild("email").equalTo(userEmail).once("value", function (snapshot) {
+                                if (snapshot.exists()) {
+                                    console.log("Email exists in the database");
+                                    console.log(snapshot);
+                                    // alert("you already pay for this course ")
+                                    window.location = "advanced-Aari-watch.html"
+
+                                }
+                                else {
+                                    alert("you can't pay for this course")
+                                    // window.location = "advanced-student.html"
+                                }
+                            });
+                        }
+                    });
+                }
+
+            }
+
+            function buythiscourse11() {
+                // var rzp1 = new Razorpay(options);sss
+                const login = sessionStorage.getItem("advuser")
+
+                if (login === null) {
+                    window.location = "advanced-course-login.html"
+                }
+                else {
+                    firebase.auth().onAuthStateChanged(function (user) {
+                        if (user) {
+                            var userEmail = user.email;
+                            var usersRef = firebase.database().ref("course 11");
                             usersRef.orderByChild("email").equalTo(userEmail).once("value", function (snapshot) {
                                 if (snapshot.exists()) {
                                     console.log("Email exists in the database");
