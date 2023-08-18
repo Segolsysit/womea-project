@@ -8,7 +8,7 @@
 
     <!-- Basic Page Needs
     ================================================== -->
-    <title>Mehandi Template</title>
+    <title>Aari Work Template(Malayalam)</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Courseplus is - Professional A unique and beautiful collection of UI elements">
@@ -70,7 +70,7 @@
                                 <span></span>
                             </span>
                         </a>
-                        <a href="index.html" class="navbar-brand logo">
+                        <a id="Nav_res_logo" href="index.html" class="navbar-brand logo">
                             <img src="assets/img/logo/logo.png" class="img-fluid" alt="Logo">
                         </a>
                     </div>
@@ -173,8 +173,8 @@
         <div class="sidebar bg-white">
 
             <!-- slide_menu for mobile -->
-            <span class="btn-close-mobi right-3 left-auto" uk-toggle="target: #wrapper ; cls: is-active"></span>
-
+            <span class="btn-close-mobi right-3 left-auto" uk-toggle="target: #wrapper ; cls: is-active"><i
+                    class="fa-solid fa-caret-left"></i></span>
             <!-- back to home link -->
             <div class="flex justify-between lg:-ml-1 mt-1 mr-2">
                 <a href="course-intro.html" class="flex items-center text-blue-500">
@@ -184,7 +184,8 @@
             </div>
 
             <!-- title -->
-            <h1 class="lg:text-2xl text-lg font-bold mt-2 line-clamp-2"> Learn Mehandi course Essentials </h1>
+            <h1 class="lg:text-2xl text-lg font-bold mt-2 line-clamp-2"> Learn Aari work course(Malayalam) Essentials
+            </h1>
 
             <nav class="cd-secondary-nav nav-small extanded w-auto lg:block hidden">
                 <ul uk-switcher="connect: #course-tabs; animation: uk-animation-fade">
@@ -241,11 +242,11 @@
 
                                 </div>
                             </div> -->
-                            <div class="pt-2 uk-open">
+                            <div class="pt-2 uk-open" style="height: 80%;">
                                 <a class="uk-accordion-title text-md mx-2 font-semibold" href="#">
-                                    <div class="mb-1 text-sm font-medium"> Section 1 </div> Mehandi Full Course
+                                    <div class="mb-1 text-sm font-medium"> Section 1 </div> Aari Full Course(Malayalam)
                                 </a>
-                                <div class="uk-accordion-content mt-3">
+                                <div class="uk-accordion-content mt-3" style="height: 50%;">
 
                                     <!-- side title  -->
                                     <ul class="course-curriculum-list" id="dynamic-list"
@@ -379,115 +380,55 @@
         signoutlink.classList.replace("nav-link", "btn")
         signoutlink.classList.add("btn-success")
         signoutlink.href = "javascript:logout()"
+        function getusername() {
+            // const user = firebase.auth().currentUser;
+            // if (user !== null) {
+            //     const username = user.Username;
+            // }
+
+            currentuser = sessionStorage.getItem('advuser')
+        }
+
+        function logout() {
+            sessionStorage.removeItem('advuser')
+            window.location = "index.html"
+        }
+        window.onload = function () {
+            getusername();
+            if (currentuser === null) {
+                window.location = "login.html"
+                // userlink.innerText = "Login"
+                // userlink.classList.replace("nav-link", "btn")
+                // userlink.classList.add("btn-primary")
+                // userlink.href = "login.html"
+
+                // signoutlink.innerText = "Register"
+                // signoutlink.classList.replace("nav-link", "btn")
+                // signoutlink.classList.add("btn-success")
+                // signoutlink.href = "register.html"
+            }
+            else {
+                userlink.innerText = "My DashBoard"
+                userlink.classList.replace("nav-link", "btn")
+                userlink.classList.add("btn-primary")
+                userlink.href = "deposit-student-dashboard.html"
+
+                signoutlink.innerText = "sign out"
+                signoutlink.classList.replace("nav-link", "btn")
+                signoutlink.classList.add("btn-success")
+                signoutlink.href = "javascript:logout()"
+            }
+        }
+
         async function FetchUrls() {
             return [
-                { src: "https://drive.google.com/file/d/1v4dYeo59iHxWTq5tBjG8-y0ZA87i_2lP/preview" },//1
-                { src: "https://drive.google.com/file/d/1vEP7ii__b9MyPIKcOxB1PR8EuhzzbLFW/preview" },//2
-                { src: "https://drive.google.com/file/d/1v54VRdmf70dALu0mWku7i4f_vVM_4Xet/preview" },//3
-                { src: "https://drive.google.com/file/d/1vIgnItGWt2AnA-wQEUK3j4vSBkAZiuDm/preview" },//4
-                { src: "https://drive.google.com/file/d/1vAW-yBcOLTiEOVGIuYjxmf1v_-W53Ls9/preview" },//5
-                { src: "https://drive.google.com/file/d/1vPXCDUqcV2kOSUjS7YsB2TrUS32uSjxo/preview" },//6
-                { src: "https://drive.google.com/file/d/1vS19UWN48NBI2oavdaXWT9g39mD5mM5Z/preview" },//7
-                { src: "https://drive.google.com/file/d/1vT3eM1WFEylGdL7u82q3kMEHKKkSYWR1/preview" },//8
-                { src: "https://drive.google.com/file/d/1vV-5PN1LBaMA04CjI4E8yVxP8GaLxZ_o/preview" },//9
-                { src: "https://drive.google.com/file/d/1vV9mALakisUTG_3IkSYYdLG4NmgM-cw_/preview" },//10
-                { src: "https://drive.google.com/file/d/1vDR2Q7yht8r8tAPwTtGgNy56Dfw6soHI/preview" },//11
-                { src: "https://drive.google.com/file/d/1wabKBYyI5gh73JcdABMuO6iKCq1C-MXf/preview" },//12
-                { src: "https://drive.google.com/file/d/1vb7JtNEmHVus4Mwu3823g4cZGkfJ--7D/preview" },//13
-                { src: "https://drive.google.com/file/d/1vxzP-ig10jrB936jtBqzw8MCr_BPooZL/preview" },//14
-                { src: "https://drive.google.com/file/d/1vzE0SdobICvf9pxllPjPyGLV7nAKjhRP/preview" },//15
-                { src: "https://drive.google.com/file/d/1w7ceb2QERzk5D857T0hbGjSZCAt4eQ7c/preview" },//16
-                { src: "https://drive.google.com/file/d/1w8hmtvSHb5lp7fqRMIVsxXzd1WPk3fu6/preview" },//17
-                { src: "https://drive.google.com/file/d/1wB9iGqyKiB9fyr4XWOGp1Gd8XUuP_hP_/preview" },//18
-                { src: "https://drive.google.com/file/d/1w_N9WIzKmrwmBJy5NkG_oxh8N37OaXzJ/preview" },//19
-                { src: "https://drive.google.com/file/d/1wKbIwGpU1xmcKC1rfwLhAkh-hXUpBmxb/preview" },//20
-                { src: "https://drive.google.com/file/d/1wEbAt0p1gjS1ZHnesmToAxHO90IJelK2/preview" },//21
-                { src: "https://drive.google.com/file/d/1wRdDTS3-YD5j1vlr3CUU8VO5afvShf6T/preview" },//22
-                { src: "https://drive.google.com/file/d/1wOT5Ie8_y6iWKqzGrbDg5__7mTzJ2QYr/preview" },//23
-                { src: "https://drive.google.com/file/d/1wWi45khUjrhwvq2rzQkZopkVsytlYtVp/preview" },//24
-                { src: "https://drive.google.com/file/d/17vQf48cuND2NxvuUlN1HxsGBjVBnXA6I/preview" },//25
-                { src: "https://drive.google.com/file/d/15HMIyglYt-Lgsw1Wqqn8jcVeRhIfKEwn/preview" },//26
-                { src: "https://drive.google.com/file/d/17uOMBRDMiwhjKNg2kImVnM1-QAFmilQn/preview" },//27
-                { src: "https://drive.google.com/file/d/15PeHlTGujlkveAEknsa8e8SBBknQ6iGf/preview" },//28
-                { src: "https://drive.google.com/file/d/1876kpdniUMr3dTTxNGbK2EliXqLwsCM5/preview" },//29
-                { src: "https://drive.google.com/file/d/18B82tFyR-74YltRaV-B4MEhW5h7Nj787/preview" },//30
-                { src: "https://drive.google.com/file/d/18C7ppRSdfZ4FJdsCFqQ3zmbn6wrow-jZ/preview" },//31
-                { src: "https://drive.google.com/file/d/18FDnu2ViwZi23HsEo8plF4gfixyPWowp/preview" },//32
-                { src: "https://drive.google.com/file/d/158ZNdun7AWrGY0wUzCUeX39X1-yi6iU0/preview" },//33
-                { src: "https://drive.google.com/file/d/18HQFRD1oXKhyJOQnEZ8n0nk5yKNT83qi/preview" },//34
-                { src: "https://drive.google.com/file/d/18VA6s3tss7erHRxEewM3egLp_fuJ4Sn8/preview" },//35
-                { src: "https://drive.google.com/file/d/18VC6qHaakNW7SVfpwe_ejlwK6RbwEvND/preview" },//36
-                { src: "https://drive.google.com/file/d/18a34O9rEvBIGER4cEEjAQtbcXjQFbtdc/preview" },//37
-                { src: "https://drive.google.com/file/d/18azUub6li5WMe8-YYYvcUA8lMafc-8kM/preview" },//38
-                { src: "https://drive.google.com/file/d/18eGMtRaqfUapmvv2E-9K1lPtyTOmuhLE/preview" },//39
-                { src: "https://drive.google.com/file/d/18evcFNVPueHNFAvZg9x7lh1giP-RVOZy/preview" },//40
-                { src: "https://drive.google.com/file/d/13PnLCmpM0Zem_Ex7PVbab1NYhcBipE1z/preview" },//41
-                { src: "https://drive.google.com/file/d/13TDVdti782-cbKvPYrYu6VV7P2CQR9QI/preview" },//42
-                { src: "https://drive.google.com/file/d/13WKQpH7VGXJVXssYDo09nDjmAjzm2P69/preview" },//43
-                { src: "https://drive.google.com/file/d/13bl4gnkEru3LMnAhsKwHxw0WDQkBdxys/preview" },//44
-                { src: "https://drive.google.com/file/d/18f-2scmwfX-Y7povMw6nmkUDMgLTNrZP/preview" },//45
-                { src: "https://drive.google.com/file/d/13gzObAdV0SU0z8rgLTS5Tj8_k2EndR1r/preview" },//46
-                { src: "https://drive.google.com/file/d/13nqTeF0T2pfRV_GYIruhLbY08ml4M_Ln/preview" },//47
-                { src: "https://drive.google.com/file/d/13pJTMpcZh0N59gfgfQdoAwwZutrFGL-5/preview" },//48
-                { src: "https://drive.google.com/file/d/13wJJ30aWzLc-xRb13JvdQnp_Fu0PTrY7/preview" },//49
-                { src: "https://drive.google.com/file/d/13waah1bVoL6U2FHHGm6yjs31SuHY9lQT/preview" },//50
-                { src: "https://drive.google.com/file/d/149OVNpLhC9mMfRTgOpKbna4wzld0C5iC/preview" },//51
-                { src: "https://drive.google.com/file/d/14AHLhpe-Yr2-_jbNUlR31jyllwsXFPWX/preview" },//52
-                { src: "https://drive.google.com/file/d/14FyC-U7mJuAk6mdjyLxFx9hD0vd4kCqu/preview" },//53
-                { src: "https://drive.google.com/file/d/14J4t8jqcP4Dsq2ks9Pi8-9pkQykSDL2B/preview" },//54
-                { src: "https://drive.google.com/file/d/14J99WWpZiXTQzwF5fIJ8Av90wju6x7J4/preview" },//55
-                { src: "https://drive.google.com/file/d/15c7dNLNPPNe-kS1eplGgfWU4nm6LtnB0/preview" },//56
-                { src: "https://drive.google.com/file/d/15pCtedxbUapiV0AJIJB6VY2f34rgC948/preview" },//57
-                { src: "https://drive.google.com/file/d/15jElMdUbMSiQ1MiQDAXK_c4HBAk5Jjyq/preview" },//58
-                { src: "https://drive.google.com/file/d/15qbZnYF8nCn0L1u0UGT8wjaSbWJ7WZef/preview" },//59
-                { src: "https://drive.google.com/file/d/15y7FzrBAmWgNpgGNxe3FpEs7wKnoGszv/preview" },//60
-                { src: "https://drive.google.com/file/d/16-3lfJlCvlCDgUnlk-DxNfXcjcyk91Mf/preview" },//61
-                { src: "https://drive.google.com/file/d/16AAzqtAyDmWsWErepcdxJu84oP7eBHXU/preview" },//62
-                { src: "https://drive.google.com/file/d/16D4i5Y3jHSO3aig557NzcCt_eHsNiepy/preview" },//63
-                { src: "https://drive.google.com/file/d/16IsH7ko7az9b-zLsu8CufopB5mTxzaQI/preview" },//64
-                { src: "https://drive.google.com/file/d/16JC0PmrpyZzBWxozCeO5qI8Io6iwO2oz/preview" },//65
-                { src: "https://drive.google.com/file/d/16MggVUrhxWGEtRJeZHCPXUL1HMefu3Vq/preview" },//66
-                { src: "https://drive.google.com/file/d/16XoKEhMUWEsZ5Hacgwqdq-NmNDPDy2K0/preview" },//67
-                { src: "https://drive.google.com/file/d/16eowQ5E75U-9MiHxci-JgGkzreAOOFJ6/preview" },//68
-                { src: "https://drive.google.com/file/d/16f9_319NPN14q3umwI-mFaD-sHTi30yO/preview" },//69
-                { src: "https://drive.google.com/file/d/16fKVjGLGCvtQjVe-4Uht0Mnkjg9FF7gW/preview" },//70
-                { src: "https://drive.google.com/file/d/16frldPDFUmzF4ePcf4HTZemAZ48qsuen/preview" },//71
-                { src: "https://drive.google.com/file/d/16kBRZBzJUeyc-A7yjh5Z147uVsoK0hnb/preview" },//72
-                { src: "https://drive.google.com/file/d/16gIVq7ydlyjQpYlCKbPmEvPk2I92ilxw/preview" },//73
-                { src: "https://drive.google.com/file/d/16lbi3vj4_sox-dBUf0Xab9C5M9h8RrZY/preview" },//74
-                { src: "https://drive.google.com/file/d/17Hgq7HPfD5JtygoEsfA_WPDBDp-ISeu3/preview" },//75
-                { src: "https://drive.google.com/file/d/16xKfnJtum2_7bEQ7nspc0HOAydXNJQET/preview" },//76
-                { src: "https://drive.google.com/file/d/16y2JDd1euvL7qoQZmEgAABKnJGazTsfw/preview" },//77
-                { src: "https://drive.google.com/file/d/17344EJ2Ry2CJzTxtA59HUcMHhi2TKOyM/preview" },//78
-                { src: "https://drive.google.com/file/d/178ZiJeNbhtwIImM4GUBYU5sTmQ0Rz6FG/preview" },//79
-                { src: "https://drive.google.com/file/d/17Bmu2O77v12csmyOMUajOWmxsaIYme7z/preview" },//80
-                { src: "https://drive.google.com/file/d/17CxmMxjcPTtq8GCoI6dBwasXvEebnrHh/preview" },//81
-                { src: "https://drive.google.com/file/d/17RMn9mjnL-BicpuAyhK2sErukPiTEByC/preview" },//82
-                { src: "https://drive.google.com/file/d/17U7pA6oVbX1HHQE17c3-bsEIAy_r3tb7/preview" },//83
-                { src: "https://drive.google.com/file/d/17WoPuHcMbgLeTvHDLqhTpG-oLvFqWVOw/preview" },//84
-                { src: "https://drive.google.com/file/d/17YZwLWb9KViHERY3yCgMJ8EvS84QXn_c/preview" },//85
-                { src: "https://drive.google.com/file/d/17ZReWhq47_Y3IjkQ6IlRkDlSToN31swV/preview" },//86
-                { src: "https://drive.google.com/file/d/17ZSIyyp72DSrPW8JLN7jZEYNWls6fMSi/preview" },//87
-                { src: "https://drive.google.com/file/d/17cGHuBs50S70creV3A6IiGI-9L3E1oRY/preview" },//88
-                { src: "https://drive.google.com/file/d/17dNQxNSNuKCMMsAwMuzC6F1oXIx9XreM/preview" },//89
-                { src: "https://drive.google.com/file/d/17mQ4sUv29icBkCwzfDlejsPIJRz2NE6E/preview" },//90
-                { src: "https://drive.google.com/file/d/17x5IV8V4L4Gn-qiDvmkRALvfFkmjlpfi/preview" },//91
-                { src: "https://drive.google.com/file/d/18mrjBl2Lk9ZAEMY1iBcyJUOms9OPSPcV/preview" },//92
-                { src: "https://drive.google.com/file/d/19bC43FRUlKNRaW7WYbHL9w83J9COFKZa/preview" },//93
-                { src: "https://drive.google.com/file/d/12qu4Fb0ORH0bFRsvzcMXJqovwXZwY3_V/preview" },//94
-                { src: "https://drive.google.com/file/d/158iHtDsZGqhmC9LmO5EyIen0QBRATkPn/preview" },//95
-                { src: "https://drive.google.com/file/d/12bgGYeO1DZwaKSoBBG65IQv0rnbLxjws/preview" },//96
-                { src: "https://drive.google.com/file/d/196r-dqC0neCOh-HckWhL22Wmsj70YQh5/preview" },//97
-                { src: "https://drive.google.com/file/d/19bgzxxEnrX7cSkxY6cPxRD83JNx-9Wq-/preview" },//98
-                { src: "https://drive.google.com/file/d/12O7-V-j_R9jqI4PKMzFb6i8P2nY-BcEL/preview" },//99
-                { src: "https://drive.google.com/file/d/18V5ATXmgUyOWVEDvSGQmzI4IoLQsUNT6/preview" },//100
-                { src: "https://drive.google.com/file/d/18dyfLlQJ4V9AR0h8Ke0UdB9lAjLjUxJU/preview" },//101
-                { src: "https://drive.google.com/file/d/18HXl1W-ijHXjhxRI7rA55HxcTgcYFIvr/preview" },//102
-                { src: "https://drive.google.com/file/d/18jjzOhWkqa_Zd_FvW7zSDw1sDrfaClgi/preview" },//103
-                { src: "https://drive.google.com/file/d/18R521UT6wNch_KJIFOglH1YpGkiuKbWl/preview" },//104
-                { src: "https://drive.google.com/file/d/18SUngnJrMqKBe3pLCU_9Z13fxXM3jJ2f/preview" },//105
-                { src: "https://drive.google.com/file/d/19IlRDtQpwUw41qR4aLdTQcaoBzCLC0GM/preview" },//106
-                { src: "https://drive.google.com/file/d/19FkYxTEZ1eApcX1dZVoQ88eXNGYNg4EN/preview" },//107
+                { src: "https://drive.google.com/file/d/1OMogg_5TvM3HdYVSyrsb1ZEnWWDgiJiG/preview" },
+                { src: "https://drive.google.com/file/d/1OReRNFeAYvFF1JaoPi4BWGUxkcdcCymZ/preview" },
+                { src: "https://drive.google.com/file/d/1ORtd1PRbWhovn8_NhjOkNxjytJ6hhxMp/preview" },
+                { src: "https://drive.google.com/file/d/1OXK8Qduu7SwhIozbS65KDz7mXZLaoK0i/preview" },
+                { src: "https://drive.google.com/file/d/1OpEy0W-SACHqmgWWAOBrU-MUXmpizZ64/preview" },
+                { src: "https://drive.google.com/file/d/1Or_AuCT70E4xlEPxYpJRTLnvklI7yqXa/preview" },
+                { src: "https://drive.google.com/file/d/1OvuR2Ju9R8FRS3UCul-OjJcxF8qOZOFQ/preview" },
 
             ]
 
@@ -521,138 +462,24 @@
 
         function SubTitles() {
 
-            let Titles = [
-                { tit: "Mehandi 1" },
-                { tit: "Mehandi 2" },
-                { tit: "Mehandi 3" },
-                { tit: "Mehandi 4" },
-                { tit: "Mehandi 5" },
-                { tit: "Mehandi 6" },
-                { tit: "Mehandi 7" },
-                { tit: "Mehandi 8" },
-                { tit: "Mehandi 9" },
-                { tit: "Mehandi 10" },
-                { tit: "Mehandi 11" },
-                { tit: "Mehandi 12" },
-                { tit: "Mehandi 13" },
-                { tit: "Mehandi 14" },
-                { tit: "Mehandi 15" },
-                { tit: "Mehandi 16" },
-                { tit: "Mehandi 17" },
-                { tit: "Mehandi 18" },
-                { tit: "Mehandi 19" },
-                { tit: "Mehandi 20" },
-                { tit: "Mehandi 21" },
-                { tit: "Mehandi 22" },
-                { tit: "Mehandi 23" },
-                { tit: "Mehandi 24" },
-                { tit: "Mehandi 25" },
-                { tit: "Mehandi 26" },
-                { tit: "Mehandi 27" },
-                { tit: "Mehandi 28" },
-                { tit: "Mehandi 29" },
-                { tit: "Mehandi 30" },
-                { tit: "Mehandi 31" },
-                { tit: "Mehandi 32" },
-                { tit: "Mehandi 33" },
-                { tit: "Mehandi 34" },
-                { tit: "Mehandi 35" },
-                { tit: "Mehandi 36" },
-                { tit: "Mehandi 37" },
-                { tit: "Mehandi 38" },
-                { tit: "Mehandi 39" },
-                { tit: "Mehandi 40" },
-                { tit: "Mehandi 41" },
-                { tit: "Mehandi 42" },
-                { tit: "Mehandi 43" },
-                { tit: "Mehandi 44" },
-                { tit: "Mehandi 45" },
-                { tit: "Mehandi 46" },
-                { tit: "Mehandi 47" },
-                { tit: "Mehandi 48" },
-                { tit: "Mehandi 49" },
-                { tit: "Mehandi 50" },
-                { tit: "Mehandi 51" },
-                { tit: "Mehandi 52" },
-                { tit: "Mehandi 53" },
-                { tit: "Mehandi 54" },
-                { tit: "Mehandi 55" },
-                { tit: "Mehandi 56" },
-                { tit: "Mehandi 57" },
-                { tit: "Mehandi 58" },
-                { tit: "Mehandi 59" },
-                { tit: "Mehandi 60" },
-                { tit: "Mehandi 61" },
-                { tit: "Mehandi 62" },
-                { tit: "Mehandi 63" },
-                { tit: "Mehandi 64" },
-                { tit: "Mehandi 65" },
-                { tit: "Mehandi 66" },
-                { tit: "Mehandi 67" },
-                { tit: "Mehandi 68" },
-                { tit: "Mehandi 69" },
-                { tit: "Mehandi 70" },
-                { tit: "Mehandi 71" },
-                { tit: "Mehandi 72" },
-                { tit: "Mehandi 73" },
-                { tit: "Mehandi 74" },
-                { tit: "Mehandi 75" },
-                { tit: "Mehandi 76" },
-                { tit: "Mehandi 77" },
-                { tit: "Mehandi 78" },
-                { tit: "Mehandi 79" },
-                { tit: "Mehandi 80" },
-                { tit: "Mehandi 81" },
-                { tit: "Mehandi 82" },
-                { tit: "Mehandi 83" },
-                { tit: "Mehandi 84" },
-                { tit: "Mehandi 85" },
-                { tit: "Mehandi 86" },
-                { tit: "Mehandi 87" },
-                { tit: "Mehandi 88" },
-                { tit: "Mehandi 89" },
-                { tit: "Mehandi 90" },
-                { tit: "Mehandi 91" },//
-                { tit: "Dye release theory" },
-                { tit: "hena cone rolling" },
-                { tit: "Henna mixlogy" },
-                { tit: "Henna mixlogy 2" },
-                { tit: "Henna mixlogy 3" },
-                { tit: "Henna mixology theory" },
-
-                { tit: "Henna mixology" },
-                { tit: "Intro video" },
-                { tit: "mehandi after care" },
-                { tit: "mehandi charges" },
-                { tit: "mehandi pre care" },
-                { tit: "mehandi sitting position" },
-                { tit: "Out Put colour theory" },
-                { tit: "Practice cone theory" },
-                { tit: "products knowledge" },
-                { tit: "Small batch theory" },
-                { tit: "" }
-
-
-            ]
             const listContainer = document.getElementById("dynamic-list");
-            let i = 1;
-            Titles.forEach(classItem => {
-                // for (let i = 1; i <= 63; i++) {
+
+            // Titles.forEach(classItem => {
+            for (let i = 1; i <= 9; i++) {
 
                 const listItem = document.createElement("li");
                 const link = document.createElement("a");
                 const hiddenSpan = document.createElement("span");
 
                 link.href = "#";
-                // link.textContent = `Aari class ${i++}`
-                link.textContent = `${i++}. ${classItem.tit} `
+                link.textContent = `Aari class ${i}`
                 // hiddenSpan.className = "hidden";
                 // hiddenSpan.textContent = ` ${classItem.duration}`;
 
                 link.appendChild(hiddenSpan);
                 listItem.appendChild(link);
                 listContainer.appendChild(listItem);
-            });
+            };
 
         }
 
@@ -662,51 +489,9 @@
             e.preventDefault();
         }, false);
 
-        userlink = document.getElementById('userlink')
-        signoutlink = document.getElementById('signoutlink')
-        currentuser = null
-        // const user = firebase.auth().currentUser;
 
-        function getusername() {
-            // const user = firebase.auth().currentUser;
-            // if (user !== null) {
-            //     const username = user.Username;
-            // }
 
-            currentuser = sessionStorage.getItem('advuser')
-        }
 
-        function logout() {
-            sessionStorage.removeItem('advuser')
-            window.location = "index.html"
-        }
-
-        window.onload = function () {
-            getusername();
-            if (currentuser === null) {
-                window.location = "login.html"
-                // userlink.innerText = "Login"
-                // userlink.classList.replace("nav-link", "btn")
-                // userlink.classList.add("btn-primary")
-                // userlink.href = "login.html"
-
-                // signoutlink.innerText = "Register"
-                // signoutlink.classList.replace("nav-link", "btn")
-                // signoutlink.classList.add("btn-success")
-                // signoutlink.href = "register.html"
-            }
-            else {
-                userlink.innerText = "My DashBoard"
-                userlink.classList.replace("nav-link", "btn")
-                userlink.classList.add("btn-primary")
-                userlink.href = "deposit-student-dashboard.html"
-
-                signoutlink.innerText = "sign out"
-                signoutlink.classList.replace("nav-link", "btn")
-                signoutlink.classList.add("btn-success")
-                signoutlink.href = "javascript:logout()"
-            }
-        }
     </script>
 
     <script src="assets/js/script.js"></script>
