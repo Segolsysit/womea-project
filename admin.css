@@ -101,7 +101,15 @@ input:active:focus::placeholder {
     transition: 0.5s;
 }
 
-button {
+.signout {
+    margin-top: 2%;
+    padding: 10px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+.register {
     cursor: pointer;
     display: inline;
     /* float: left; */
@@ -135,8 +143,8 @@ button span {
 }
 
 button:hover span {
-    -webkit-transform: translateX(30px);
-    transform: translateX(30px);
+    /* -webkit-transform: translateX(30px);
+    transform: translateX(30px); */
 }
 
 .reg {

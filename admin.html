@@ -122,6 +122,7 @@
     </svg> -->
 
     <div style="display: flex; flex-direction: column; align-items: center;">
+        <button class="signout" onclick="Signout()">SignOut</button>
 
         <div class="container">
             <h2>Register</h2>
@@ -135,16 +136,16 @@
                 <input type="text" id="number" class="number" placeholder="number">
                 <br />
                 <select id="course" class="number">
-                    <option value="course 1">course 1</option>
-                    <option value="course 2">course 2</option>
-                    <option value="course 3">course 3</option>
-                    <option value="course 4">course 4</option>
-                    <option value="course 5">course 5</option>
-                    <option value="course 6">course 6</option>
-                    <option value="course 7">course 7</option>
-                    <option value="course 8">course 8</option>
-                    <option value="course 9">course 9</option>
-                    <option value="course 10">course 10</option>
+                    <option value="course 1">Tailoring Course </option>
+                    <option value="course 2">Aari Work Course</option>
+                    <option value="course 3">NailArt Course</option>
+                    <option value="course 4">Saree Drapping Course </option>
+                    <option value="course 5"> Mehandi Course</option>
+                    <option value="course 6">Hairstyle Course</option>
+                    <option value="course 7">Flower Making Course</option>
+                    <option value="course 8">Beautician Course</option>
+                    <option value="course 9">Baking Course</option>
+                    <option value="course 10">Makeup Course</option>
 
 
 
@@ -199,6 +200,14 @@
     <!-- <div id="table-container"></div> -->
 
     <script>
+
+
+        function Signout() {
+            localStorage.removeItem('isLoggedIn');
+            window.location = 'admin-login.html'
+        }
+
+
         window.onload = window.scrollTo({
             left: 0,
             top: 0,
