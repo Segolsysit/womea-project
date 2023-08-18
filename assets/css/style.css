@@ -21609,7 +21609,11 @@ input[type="password"]::-ms-clear {
     margin-left: 3.5px;
    
     margin-block: 10px;
-    background-color: #7b1ffe;
+    background-color: #f66962;
+  }
+
+  #Auth_btn_Adv{
+
   }
   .section-sub-head {
     margin-bottom: 20px;
