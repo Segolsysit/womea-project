@@ -103,17 +103,17 @@
                                     <a href="support.html">Contact Us</a>
                                 </li>
 
-                                <li>
+                                <!-- <li>
                                     <ul id="Auth_btn" class="nav header-navbar-rht align-items-center resonsive_nav">
-                                    <li class="nav-item">
-                                        <a id="userlink" class="nav-link login-three-head button"
-                                            href="#"><span>Login</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a id="signoutlink" class="nav-link signin-three-head" href="#">Register</a>
-                                    </li>
-                                </ul>
-                           </li>
+                                        <li class="nav-item">
+                                            <a id="userlink" class="nav-link login-three-head button"
+                                                href="#"><span>Login</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a id="signoutlink" class="nav-link signin-three-head" href="#">Register</a>
+                                        </li>
+                                    </ul>
+                                </li> -->
 
 
                             </ul>
@@ -778,10 +778,10 @@
                 messagingSenderId: "327666396191",
                 appId: "1:327666396191:web:aec68df5a22197d72af92a"
             });
-
             let userlink = document.getElementById('userlink')
             let signoutlink = document.getElementById('signoutlink')
             var currentuser = null
+
             // const user = firebase.auth().currentUser;
 
             function getusername() {
@@ -802,6 +802,7 @@
             }
 
             window.onload = function () {
+
                 getusername();
                 if (currentuser === null) {
                     // userlink.innerText = "Login"
