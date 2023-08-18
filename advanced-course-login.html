@@ -149,9 +149,10 @@
             firebase.auth().signInWithEmailAndPassword(email, password)
                 .then((userCredential) => {
                     // Signed in
-                    var username = userCredential.user;
-                    sessionStorage.setItem("advuser",username)
-                    window.location="advanced-student.html"
+                    // console.log(userCredential.user.multiFactor.user.accessToken);
+                    var username = userCredential.user.multiFactor.user.accessToken
+                    sessionStorage.setItem("advuser", username)
+                    window.location = "advanced-student.html"
                     // ...
                 })
                 .catch((error) => {
