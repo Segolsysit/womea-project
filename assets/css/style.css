@@ -1414,6 +1414,8 @@ button.bg-danger:hover {
 }
 .bar-icon {
   display: inline-block;
+  position: relative;
+  
   width: 31px;
 }
 .bar-icon span {
@@ -19804,7 +19806,7 @@ input[type="password"]::-ms-clear {
     left: 0;
     overflow-x: hidden;
     overflow-y: auto;
-    z-index: 1060;
+    z-index: 20000;
     transform: translateX(-260px);
     transition: all 0.4s;
     background-color: #f66962;
@@ -19820,7 +19822,7 @@ input[type="password"]::-ms-clear {
     align-items: center;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
-    display: inline-flex;
+    display: flex;
   }
   #mobile_btn {
     display: inline-block;
@@ -21426,6 +21428,8 @@ input[type="password"]::-ms-clear {
   }
   .navbar-header {
     width: 100%;
+    display: flex;
+    align-items: center;
   }
   .logo {
     margin-right: 0;
@@ -21452,9 +21456,11 @@ input[type="password"]::-ms-clear {
     max-height: 40px;
   }
   #mobile_btn {
-    top: 18px;
-    margin-right: 0;
-    position: absolute;
+    
+    margin-right: 10px;
+    left: 10px;
+    position: relative;
+    margin-top: 30px;
   }
   .logo img,
   .menu-logo img {
@@ -21584,6 +21590,9 @@ input[type="password"]::-ms-clear {
   .trend-course,
   .share-knowledge {
     padding: 40px 0;
+  }
+  .Nav_res_logo{
+    position: relative;
   }
   .master-skill {
     padding: 40px 0 0;
