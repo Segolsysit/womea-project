@@ -21604,6 +21604,13 @@ input[type="password"]::-ms-clear {
     position: relative;
     display: block;
   }
+  #Auth_btn{
+    display: block;
+    margin-left: 3.5px;
+   
+    margin-block: 10px;
+    background-color: #7b1ffe;
+  }
   .section-sub-head {
     margin-bottom: 20px;
   }
