@@ -62,6 +62,9 @@ input[type="password"] {
 .btn:focus {
   box-shadow: inherit;
 }
+#res_signout_btn{
+  display: none;
+}
 label {
   display: inline-block;
   margin-bottom: 0.5rem;
@@ -18031,6 +18034,9 @@ input[type="password"]::-ms-clear {
     display: block;
     position: relative;
   }
+  #res_signout_btn{
+    display: none;
+  }
   .main-nav > li > a {
     line-height: 70px;
     padding: 0 !important;
@@ -18145,6 +18151,9 @@ input[type="password"]::-ms-clear {
 @media (min-width: 576px) {
   .modal-styles .modal-dialog {
     max-width: 860px;
+  }
+  #res_signout_btn{
+    display: none;
   }
   .growup-section .growup-right-img {
     margin-top: 20px;
@@ -24684,6 +24693,9 @@ input[type="password"]::-ms-clear {
   .page-breadcrumb ol li.active {
     display: block;
     padding-left: 0;
+  }
+  #res_signout_btn{
+    display: block;
   }
   .category-tab ul li {
     width: 100%;
