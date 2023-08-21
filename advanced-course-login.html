@@ -141,7 +141,61 @@
                 appId: "1:327666396191:web:aec68df5a22197d72af92a"
             });
 
-            const auth = firebaseApp.auth();
+            let alertShown = false;
+
+            function usercheck() {
+
+                if (!alertShown) {
+
+
+                    const auth = firebaseApp.auth();
+                    const database = firebase.database();
+
+                    auth.onAuthStateChanged(user => {
+                        if (user) {
+                            const userRef = database.ref(`/users/${user.uid}`);
+                            userRef.once('value').then(snapshot => {
+                                const userData = snapshot.val();
+                                if (userData && userData.loggedIn) {
+                                    // User is already logged in from another device
+                                    alert('User is already logged in from another device.');
+                                    auth.signOut(); // Sign out from this device
+                                    alertShown = true;
+                                } else {
+                                    // Update the user's login status and timestamp
+                                    userRef.update({
+                                        loggedIn: true,
+                                        lastLoginTimestamp: firebase.database.ServerValue.TIMESTAMP
+                                    }).then(() => {
+                                        window.location = "advanced-student.html"
+
+                                    })
+                                    // User is logged in
+                                    // Check if the user is already logged in from another device
+                                    // checkLoggedInFromAnotherDevice(user.uid);
+                                }
+                            });
+                        }
+                    })
+                }
+            }
+            usercheck()
+            // function checkLoggedInFromAnotherDevice(userId) {
+            //     // Check the user's login status in the database
+            //     const userRef = database.ref(`/users/${userId}`);
+            //     // userRef.once('value').then(snapshot => {
+            //     //     const userData = snapshot.val();
+            //     //     if (userData && userData.loggedIn) {
+            //     //         // User is already logged in from another device
+            //     //         alert('User is already logged in from another device.');
+            //     //         auth.signOut(); // Sign out from this device
+            //     //     } else {
+            //     // Update the user's login status and timestamp
+            //     userRef.push({
+            //         loggedIn: true,
+            //         lastLoginTimestamp: firebase.database.ServerValue.TIMESTAMP
+            //     });
+            // }
             // const username = document.getElementById('userlog').value;
             const email = document.getElementById('advemail').value;
             const password = document.getElementById('advpass').value;
@@ -152,13 +206,20 @@
                     // console.log(userCredential.user.multiFactor.user.accessToken);
                     var username = userCredential.user.multiFactor.user.accessToken
                     sessionStorage.setItem("advuser", username)
-                    window.location = "advanced-student.html"
                     // ...
                 })
                 .catch((error) => {
                     var errorCode = error.code;
                     var errorMessage = error.message;
                 });
+
+
+
+            // console.log(newUserRef);
+            // var uniqueKey = newUserRef.key;
+            // console.log("Unique Key: ", uniqueKey);
+            // });
+            // }
         }
 
 
