@@ -140,32 +140,6 @@
 
             <ul class="uk-switcher w-full " id="video_tabs">
 
-                <li>
-                    <div class="embed-video">
-                        <iframe src="https://drive.google.com/file/d/100iUpvbCLIQfz8O4jM1RwWZVc6iEdfyv/preview"
-                            width="640" height="480" allow="autoplay" allowfullscreen uk-responsive></iframe>
-                        <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;">
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="embed-video">
-                        <iframe src="https://drive.google.com/file/d/103Ct1xYcIzwia6mu3P2GDFl1hXc1hPL4/preview"
-                            width="640" height="480" allow="autoplay" allowfullscreen uk-responsive></iframe>
-                        <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;">
-                        </div>
-                    </div>
-                </li>
-
-                <li>
-                    <div class="embed-video">
-                        <iframe src="https://drive.google.com/file/d/111XRfk14QR4hztA3pL-j4AZBO3hgTMkZ/preview"
-                            width="640" height="480" allow="autoplay" allowfullscreen uk-responsive></iframe>
-                        <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;">
-                        </div>
-                    </div>
-                </li>
             </ul>
 
 
@@ -279,26 +253,8 @@
                                         <div style="align-items: center; display: flex; justify-content: center;">
                                             <button
                                                 style="background-color: blue; padding: 10px;border-radius: 5px; border: none;color: aliceblue;"
-                                                id="next" onclick="next()">next</button>
+                                                id="next" onclick="next()">previous</button>
                                         </div>
-                                        <li>
-                                            <a href="#">
-                                                A1 Aari intro class<span class="hidden"> 4 min </span>
-                                            </a>
-
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                A2 Fixing Cloth class<span class="hidden"> 4 min </span>
-                                            </a>
-
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                A3 Needle Practices class<span class="hidden"> 4 min </span>
-                                            </a>
-
-                                        </li>
                                     </ul>
 
                                 </div>
@@ -413,10 +369,10 @@
 
     <script>
 
-
         function next() {
-            window.location = "advanced-Aari2-watch.html"
+            window.location = "advanced-Aari-watch.html"
         }
+
         let userlink = document.getElementById('userlink')
         let signoutlink = document.getElementById('signoutlink')
         var currentuser = null
@@ -510,69 +466,69 @@
 
         async function FetchUrls() {
             return [
-                { src: "https://drive.google.com/file/d/10x_TzjMWbbErddLktLSib2jAzSsJWfJg/preview" },
-                { src: "https://drive.google.com/file/d/10jOSfH-KdgiAD1o8ktbx-vvkEmDgZw9A/preview" },
-                { src: "https://drive.google.com/file/d/1108Jh7jRzf7nIhU3sQTj9odwzbd4QVTm/preview" },
-                { src: "https://drive.google.com/file/d/11DDQ-S2IZcalZGBvDcyPDMHaMuvI4p6N/preview" },
-                { src: "https://drive.google.com/file/d/122mLxPSUHKkv05annvDiQYLa7j3O2-_P/preview" },
-                { src: "https://drive.google.com/file/d/12j1YTDB0TaVLD9PfFSmYSxdrGAD4msJN/preview" },
-                { src: "https://drive.google.com/file/d/137xUhCysHVKdMga2bqtETNP5m9tS94Me/preview" },
-                { src: "https://drive.google.com/file/d/13NDJCDZMccCn3Kc1RY0cyf-QdpbhDTP0/preview" },
-                { src: "https://drive.google.com/file/d/13WJZysZGMg5RPRuD25flZr7NnZceOdqk/preview" },
-                { src: "https://drive.google.com/file/d/13aooUzishHcOOS_jn84s4qMla8buu0xc/preview" },
-                { src: "https://drive.google.com/file/d/13fHaZ79Dc6si_bEht4Zd7KIKzl4hSwUo/preview" },
-                // { src: "https://drive.google.com/file/d/13qG1YtnLQHfSvVvfPL0ueLjoxrO7zqyh/preview" },
-                // { src: "https://drive.google.com/file/d/13tJxep1CyFxizIt_7rZo6feEFeV6B0CQ/preview" },
-                // { src: "https://drive.google.com/file/d/13uCPTaT6e41talCwaFYWeeg3SS-8XGOd/preview" },
-                // { src: "https://drive.google.com/file/d/13uyziSs2DQ6ym9b_f9eMy4LxItQjEPsG/preview" },
-                // { src: "https://drive.google.com/file/d/144HkUBcSwJh-ZcL02M6A6h9TXengjL5j/preview" },
-                // { src: "https://drive.google.com/file/d/144xPpo6WZRWJ91AdPsGqHJ5cZiXziR7V/preview" },
-                // { src: "https://drive.google.com/file/d/15hLzQoxQwJiuxVslff85t0f25e-Op27I/preview" },
-                // { src: "https://drive.google.com/file/d/15hu8re0XwKj2DaqcIa4mwOF5UwHr-9Wx/preview" },
-                // { src: "https://drive.google.com/file/d/1AKo17-tsdpVPmSO1XrTlm7aqh8M-RdQ_/preview" },
-                // { src: "https://drive.google.com/file/d/1AfPBvy6M7kItlaG8Rt4WuE2c5RXam_yl/preview" },
-                // { src: "https://drive.google.com/file/d/1CKsf67PiQu3lYVc3OJqJ0UOjlwUspWeL/preview" },
-                // { src: "https://drive.google.com/file/d/1CSJjZ69HaSwFP9jUXjvr0W_oQDuhEY83/preview" },
-                // { src: "https://drive.google.com/file/d/19_xHb9BSTWQvzp5EjdgahGtN011odtFn/preview" },
-                // { src: "https://drive.google.com/file/d/10E3L5bonappHE5xDDk2Bonxd2D0g8NNZ/preview" },
-                // { src: "https://drive.google.com/file/d/1CSwLONG6YE_m4sstbghZ5jvpkKq7OeFn/preview" },
-                // { src: "https://drive.google.com/file/d/1-1C28uU6XiUkFO4hf7hMbs4Z-3_F0CMf/preview" },
-                // { src: "https://drive.google.com/file/d/1-4LnjduHUUF_BWA1xFPLEG2kWUWcus8f/preview" },
-                // { src: 'https://drive.google.com/file/d/168io6OAJ_UewFTGKfZ6q2on8RU_l96Jj/preview' },
-                // { src: "https://drive.google.com/file/d/15lazNfMCwkAxnHX231H2N1Q3ZuxKHIzQ/preview" },
-                // { src: "https://drive.google.com/file/d/15reu9UDDG1mRQLWTEX6KNU7XWwhkMO32/preview" },
-                // { src: "https://drive.google.com/file/d/1C_vELEF_gxy9zW-3oICZPGDGPlViRyWY/preview" },
-                // { src: "https://drive.google.com/file/d/1--IxYBzXaFLkSELYHHa22-7i4WFE_WXg/preview" },
-                // { src: "https://drive.google.com/file/d/1CjVzg4Q8yh_vS8lu1KeNIBmIwkz6kY8m/preview" },
-                // { src: "https://drive.google.com/file/d/1CjtjHstiF7BXolT_tVEGFxV3JzWc6_NS/preview" },
-                // { src: "https://drive.google.com/file/d/16H_dnCfl6I-Ol_50mT6vW7SaB_U5gwfB/preview" },
-                // { src: "https://drive.google.com/file/d/16NY3BMMcUYIBK4e17XKs-SDQr8pad_9P/preview" },
-                // { src: "https://drive.google.com/file/d/1-7qVYumIuOjdl-elcfliafrcQajUt3x5/preview" },
-                // { src: "https://drive.google.com/file/d/11RtoqaYewvRyIz2Gggj0-Efw51iQOgF6/preview" },
-                // { src: "https://drive.google.com/file/d/11XboWRsdt9gL6uURho9NtCJnsh73Ycvv/preview" },
-                // { src: "https://drive.google.com/file/d/11ymwnGl-rH3aOaDYT4mPdBKsB_ueZx-Y/preview" },
-                // { src: "https://drive.google.com/file/d/1FacYoL5s738iLOM2JLZVP9NC2rYcf-oo/preview" },
-                // { src: "https://drive.google.com/file/d/1G7Jjfl6-hGHb_ow8CEktd1WTBhTKWWOr/preview" },
-                // { src: "https://drive.google.com/file/d/12lLPj4RQnh7wnBMaRkd7-pMh8ocf-JT1/preview" },
-                // { src: "https://drive.google.com/file/d/1FwH-x2bexw9X8Ya9MVN0IgpY2hpbKQa2/preview" },
-                // { src: "https://drive.google.com/file/d/13BHNQ783f6oXdg1ft5KBiXGGudOKS9VG/preview" },
-                // { src: "https://drive.google.com/file/d/13DSfCbG-ZGs2J58pbQ4fRR7CVuJx5Jqg/preview" },
-                // { src: "https://drive.google.com/file/d/13N_7mr2xVssdawZKi7TwEdzOveP202Xn/preview" },
-                // { src: "https://drive.google.com/file/d/12QCtzpKIRgiXvylK2WpJGbDzP9tuST2W/preview" },
-                // { src: "https://drive.google.com/file/d/13arsYjYp8QiI7kJe3zgY5S01j8Ny6Fj_/preview" },
-                // { src: "https://drive.google.com/file/d/13gqGAD2_8gnshtDlA5TL18owjqqkb5Xm/preview" },
-                // { src: "https://drive.google.com/file/d/162VfQ5Ztv0GzLwg_tcDq_3oEYmpnIzK7/preview" },
-                // { src: "https://drive.google.com/file/d/168QyOCU8vPHtX9MDzX1MF5gYMU4WQy8Y/preview" },
-                // { src: "https://drive.google.com/file/d/1GBq5PDShH-lmvj13PI-weGzwuivhSPZl/preview" },
-                // { src: "https://drive.google.com/file/d/122pGmt7PavJhEgSHdBX7uiekRcfW1QvC/preview" },
-                // { src: "https://drive.google.com/file/d/12_lZnJdSB3dU39fvODbhxBVoFks6NBpg/preview" },
-                // { src: "https://drive.google.com/file/d/113WdOcSuCM5IkceXhlEmtcjLrtMU3-xs/preview" },
-                // { src: "https://drive.google.com/file/d/1-K6Sx49j7QmYjr9AuV4p8L55UGW4ZIvB/preview" },
-                // { src: "https://drive.google.com/file/d/13NbAww9kKabITtLR93Hf5XwDBS9mupp3/preview" },
-                // { src: "https://drive.google.com/file/d/12r41MEu4_qXN8oiwT_fOa6bwSVnljcnv/preview" },
-                // { src: "https://drive.google.com/file/d/1-DAbtlCH2IFMeHjZGO6XMlQ7nDDLnrKa/preview" },
-                // { src: "https://drive.google.com/file/d/12bV67rqzZUg8aae49YtXVcWuuNA6dV7T/preview" },
-                // { src: "https://drive.google.com/file/d/13GLhjy_QkN7WwwQJECg2yCQ-y8fIrXTY/preview" }
+                // { src: "https://drive.google.com/file/d/10x_TzjMWbbErddLktLSib2jAzSsJWfJg/preview" },
+                // { src: "https://drive.google.com/file/d/10jOSfH-KdgiAD1o8ktbx-vvkEmDgZw9A/preview" },
+                // { src: "https://drive.google.com/file/d/1108Jh7jRzf7nIhU3sQTj9odwzbd4QVTm/preview" },
+                // { src: "https://drive.google.com/file/d/11DDQ-S2IZcalZGBvDcyPDMHaMuvI4p6N/preview" },
+                // { src: "https://drive.google.com/file/d/122mLxPSUHKkv05annvDiQYLa7j3O2-_P/preview" },
+                // { src: "https://drive.google.com/file/d/12j1YTDB0TaVLD9PfFSmYSxdrGAD4msJN/preview" },
+                // { src: "https://drive.google.com/file/d/137xUhCysHVKdMga2bqtETNP5m9tS94Me/preview" },
+                // { src: "https://drive.google.com/file/d/13NDJCDZMccCn3Kc1RY0cyf-QdpbhDTP0/preview" },
+                // { src: "https://drive.google.com/file/d/13WJZysZGMg5RPRuD25flZr7NnZceOdqk/preview" },
+                // { src: "https://drive.google.com/file/d/13aooUzishHcOOS_jn84s4qMla8buu0xc/preview" },
+                // { src: "https://drive.google.com/file/d/13fHaZ79Dc6si_bEht4Zd7KIKzl4hSwUo/preview" },
+                { src: "https://drive.google.com/file/d/13qG1YtnLQHfSvVvfPL0ueLjoxrO7zqyh/preview" },
+                { src: "https://drive.google.com/file/d/13tJxep1CyFxizIt_7rZo6feEFeV6B0CQ/preview" },
+                { src: "https://drive.google.com/file/d/13uCPTaT6e41talCwaFYWeeg3SS-8XGOd/preview" },
+                { src: "https://drive.google.com/file/d/13uyziSs2DQ6ym9b_f9eMy4LxItQjEPsG/preview" },
+                { src: "https://drive.google.com/file/d/144HkUBcSwJh-ZcL02M6A6h9TXengjL5j/preview" },
+                { src: "https://drive.google.com/file/d/144xPpo6WZRWJ91AdPsGqHJ5cZiXziR7V/preview" },
+                { src: "https://drive.google.com/file/d/15hLzQoxQwJiuxVslff85t0f25e-Op27I/preview" },
+                { src: "https://drive.google.com/file/d/15hu8re0XwKj2DaqcIa4mwOF5UwHr-9Wx/preview" },
+                { src: "https://drive.google.com/file/d/1AKo17-tsdpVPmSO1XrTlm7aqh8M-RdQ_/preview" },
+                { src: "https://drive.google.com/file/d/1AfPBvy6M7kItlaG8Rt4WuE2c5RXam_yl/preview" },
+                { src: "https://drive.google.com/file/d/1CKsf67PiQu3lYVc3OJqJ0UOjlwUspWeL/preview" },
+                { src: "https://drive.google.com/file/d/1CSJjZ69HaSwFP9jUXjvr0W_oQDuhEY83/preview" },
+                { src: "https://drive.google.com/file/d/19_xHb9BSTWQvzp5EjdgahGtN011odtFn/preview" },
+                { src: "https://drive.google.com/file/d/10E3L5bonappHE5xDDk2Bonxd2D0g8NNZ/preview" },
+                { src: "https://drive.google.com/file/d/1CSwLONG6YE_m4sstbghZ5jvpkKq7OeFn/preview" },
+                { src: "https://drive.google.com/file/d/1-1C28uU6XiUkFO4hf7hMbs4Z-3_F0CMf/preview" },
+                { src: "https://drive.google.com/file/d/1-4LnjduHUUF_BWA1xFPLEG2kWUWcus8f/preview" },
+                { src: 'https://drive.google.com/file/d/168io6OAJ_UewFTGKfZ6q2on8RU_l96Jj/preview' },
+                { src: "https://drive.google.com/file/d/15lazNfMCwkAxnHX231H2N1Q3ZuxKHIzQ/preview" },
+                { src: "https://drive.google.com/file/d/15reu9UDDG1mRQLWTEX6KNU7XWwhkMO32/preview" },
+                { src: "https://drive.google.com/file/d/1C_vELEF_gxy9zW-3oICZPGDGPlViRyWY/preview" },
+                { src: "https://drive.google.com/file/d/1--IxYBzXaFLkSELYHHa22-7i4WFE_WXg/preview" },
+                { src: "https://drive.google.com/file/d/1CjVzg4Q8yh_vS8lu1KeNIBmIwkz6kY8m/preview" },
+                { src: "https://drive.google.com/file/d/1CjtjHstiF7BXolT_tVEGFxV3JzWc6_NS/preview" },
+                { src: "https://drive.google.com/file/d/16H_dnCfl6I-Ol_50mT6vW7SaB_U5gwfB/preview" },
+                { src: "https://drive.google.com/file/d/16NY3BMMcUYIBK4e17XKs-SDQr8pad_9P/preview" },
+                { src: "https://drive.google.com/file/d/1-7qVYumIuOjdl-elcfliafrcQajUt3x5/preview" },
+                { src: "https://drive.google.com/file/d/11RtoqaYewvRyIz2Gggj0-Efw51iQOgF6/preview" },
+                { src: "https://drive.google.com/file/d/11XboWRsdt9gL6uURho9NtCJnsh73Ycvv/preview" },
+                { src: "https://drive.google.com/file/d/11ymwnGl-rH3aOaDYT4mPdBKsB_ueZx-Y/preview" },
+                { src: "https://drive.google.com/file/d/1FacYoL5s738iLOM2JLZVP9NC2rYcf-oo/preview" },
+                { src: "https://drive.google.com/file/d/1G7Jjfl6-hGHb_ow8CEktd1WTBhTKWWOr/preview" },
+                { src: "https://drive.google.com/file/d/12lLPj4RQnh7wnBMaRkd7-pMh8ocf-JT1/preview" },
+                { src: "https://drive.google.com/file/d/1FwH-x2bexw9X8Ya9MVN0IgpY2hpbKQa2/preview" },
+                { src: "https://drive.google.com/file/d/13BHNQ783f6oXdg1ft5KBiXGGudOKS9VG/preview" },
+                { src: "https://drive.google.com/file/d/13DSfCbG-ZGs2J58pbQ4fRR7CVuJx5Jqg/preview" },
+                { src: "https://drive.google.com/file/d/13N_7mr2xVssdawZKi7TwEdzOveP202Xn/preview" },
+                { src: "https://drive.google.com/file/d/12QCtzpKIRgiXvylK2WpJGbDzP9tuST2W/preview" },
+                { src: "https://drive.google.com/file/d/13arsYjYp8QiI7kJe3zgY5S01j8Ny6Fj_/preview" },
+                { src: "https://drive.google.com/file/d/13gqGAD2_8gnshtDlA5TL18owjqqkb5Xm/preview" },
+                { src: "https://drive.google.com/file/d/162VfQ5Ztv0GzLwg_tcDq_3oEYmpnIzK7/preview" },
+                { src: "https://drive.google.com/file/d/168QyOCU8vPHtX9MDzX1MF5gYMU4WQy8Y/preview" },
+                { src: "https://drive.google.com/file/d/1GBq5PDShH-lmvj13PI-weGzwuivhSPZl/preview" },
+                { src: "https://drive.google.com/file/d/122pGmt7PavJhEgSHdBX7uiekRcfW1QvC/preview" },
+                { src: "https://drive.google.com/file/d/12_lZnJdSB3dU39fvODbhxBVoFks6NBpg/preview" },
+                { src: "https://drive.google.com/file/d/113WdOcSuCM5IkceXhlEmtcjLrtMU3-xs/preview" },
+                { src: "https://drive.google.com/file/d/1-K6Sx49j7QmYjr9AuV4p8L55UGW4ZIvB/preview" },
+                { src: "https://drive.google.com/file/d/13NbAww9kKabITtLR93Hf5XwDBS9mupp3/preview" },
+                { src: "https://drive.google.com/file/d/12r41MEu4_qXN8oiwT_fOa6bwSVnljcnv/preview" },
+                { src: "https://drive.google.com/file/d/1-DAbtlCH2IFMeHjZGO6XMlQ7nDDLnrKa/preview" },
+                { src: "https://drive.google.com/file/d/12bV67rqzZUg8aae49YtXVcWuuNA6dV7T/preview" },
+                { src: "https://drive.google.com/file/d/13GLhjy_QkN7WwwQJECg2yCQ-y8fIrXTY/preview" }
             ]
 
         }
@@ -608,7 +564,7 @@
             const listContainer = document.getElementById("dynamic-list");
 
             // Titles.forEach(classItem => {
-            for (let i = 1; i <= 15; i++) {
+            for (let i = 12; i <= 63; i++) {
 
                 const listItem = document.createElement("li");
                 const link = document.createElement("a");
@@ -623,7 +579,6 @@
                 listItem.appendChild(link);
                 listContainer.appendChild(listItem);
             };
-            // const next = document.getElementById("next");
 
         }
 
