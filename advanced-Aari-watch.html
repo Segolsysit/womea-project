@@ -276,11 +276,7 @@
                                     <!-- side title  -->
                                     <ul class="course-curriculum-list" id="dynamic-list"
                                         uk-switcher="connect: #video_tabs; animation: uk-animation-fade">
-                                        <div style="align-items: center; display: flex; justify-content: center;">
-                                            <button
-                                                style="background-color: blue; padding: 10px;border-radius: 5px; border: none;color: aliceblue;"
-                                                id="next" onclick="next()">next</button>
-                                        </div>
+
                                         <li>
                                             <a href="#">
                                                 A1 Aari intro class<span class="hidden"> 4 min </span>
@@ -300,7 +296,11 @@
 
                                         </li>
                                     </ul>
-
+                                    <div style="align-items: center; display: flex; justify-content: center;">
+                                        <button
+                                            style="background-color: blue; padding: 10px;border-radius: 5px; border: none;color: aliceblue;"
+                                            id="next" onclick="next()">next Page</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -608,7 +608,7 @@
             const listContainer = document.getElementById("dynamic-list");
 
             // Titles.forEach(classItem => {
-            for (let i = 1; i <= 15; i++) {
+            for (let i = 1; i <= 11; i++) {
 
                 const listItem = document.createElement("li");
                 const link = document.createElement("a");
