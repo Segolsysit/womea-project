@@ -2375,12 +2375,12 @@ Simplebar  Styles
   box-sizing: border-box !important;
   position: relative;
   display: block;
-  height: 100%;
+  height: 80%;
   width: auto;
   visibility: visible;
   overflow: scroll;
   max-width: 100%;
-  max-height: 100%;
+  max-height: 80%;
 }
 
 .simplebar-placeholder {
