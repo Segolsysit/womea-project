@@ -2383,7 +2383,7 @@ Simplebar  Styles
   max-height: 80%;
 }
 
-@media only screen and(max-width:420px) {
+@media only screen and (max-width:420px) {
   .simplebar-content {
     direction: inherit;
     -webkit-box-sizing: border-box !important;
