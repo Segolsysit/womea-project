@@ -25362,20 +25362,31 @@ input[type="password"]::-ms-clear {
 
 @media only screen and (max-width: 430px){
 .header-navbar-rht > li > a {
-    font-size: 15px;
-    padding: 3px 5px 3px 5px; 
+    font-size: 10px;
+    /* padding: 3px 5px 3px 5px; */
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    
 }
+.header-navbar-rht > li{
+  padding: 3px 5px 3px 5px; 
+  }
+
+  .header-navbar-rht{
+    align-items: stretch;
+  }
 .signin-three-head {
-  min-width: inherit;
+  min-width: 3rem;
 }
 .login-three-head span{
-  font-size: 15px;
+  font-size: 10px;
   padding: 3px 5px 3px 5px; 
 
 }
 
 .login-three-head {
-  min-width: inherit;
+  min-width: 3rem;
 
 }
 
