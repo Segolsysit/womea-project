@@ -2383,6 +2383,22 @@ Simplebar  Styles
   max-height: 80%;
 }
 
+@media only screen and (max-width:420px) {
+  .simplebar-content {
+    direction: inherit;
+    -webkit-box-sizing: border-box !important;
+    box-sizing: border-box !important;
+    position: relative;
+    display: block;
+    height: 100%;
+    width: auto;
+    visibility: visible;
+    overflow: scroll;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
 .simplebar-placeholder {
   max-height: 100%;
   max-width: 100%;
