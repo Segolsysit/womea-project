@@ -71,13 +71,13 @@
                             </span>
                         </a>
                         <a id="Nav_res_logo" href="index.html" class="navbar-brand logo">
-                            <img src="assets/img/logo/logo.png" class="img-fluid" alt="Logo">
+                            <img src="assets/img/logo/logo1.png" class="img-fluid" alt="Logo">
                         </a>
                     </div>
                     <div class="main-menu-wrapper">
                         <div class="menu-header">
                             <a href="index.html" class="menu-logo">
-                                <img src="assets/img/logo/logo.svg" class="img-fluid" alt="Logo">
+                                <img src="assets/img/logo/logo1.png" class="img-fluid" alt="Logo">
                             </a>
                             <a id="menu_close" class="menu-close" href="javascript:void(0);">
                                 <i class="fas fa-times"></i>
@@ -413,6 +413,9 @@
 
     <script>
 
+        function next() {
+            window.location = "advanced-Aari2-watch.html"
+        }
         let userlink = document.getElementById('userlink')
         let signoutlink = document.getElementById('signoutlink')
         var currentuser = null
@@ -507,15 +510,15 @@
         async function FetchUrls() {
             return [
                 { src: "https://drive.google.com/file/d/10x_TzjMWbbErddLktLSib2jAzSsJWfJg/preview" },
-                // { src: "https://drive.google.com/file/d/10jOSfH-KdgiAD1o8ktbx-vvkEmDgZw9A/preview" },
-                // { src: "https://drive.google.com/file/d/1108Jh7jRzf7nIhU3sQTj9odwzbd4QVTm/preview" },
-                // { src: "https://drive.google.com/file/d/11DDQ-S2IZcalZGBvDcyPDMHaMuvI4p6N/preview" },
-                // { src: "https://drive.google.com/file/d/122mLxPSUHKkv05annvDiQYLa7j3O2-_P/preview" },
-                // { src: "https://drive.google.com/file/d/12j1YTDB0TaVLD9PfFSmYSxdrGAD4msJN/preview" },
-                // { src: "https://drive.google.com/file/d/137xUhCysHVKdMga2bqtETNP5m9tS94Me/preview" },
-                // { src: "https://drive.google.com/file/d/13NDJCDZMccCn3Kc1RY0cyf-QdpbhDTP0/preview" },
-                // { src: "https://drive.google.com/file/d/13WJZysZGMg5RPRuD25flZr7NnZceOdqk/preview" },
-                // { src: "https://drive.google.com/file/d/13aooUzishHcOOS_jn84s4qMla8buu0xc/preview" },
+                { src: "https://drive.google.com/file/d/10jOSfH-KdgiAD1o8ktbx-vvkEmDgZw9A/preview" },
+                { src: "https://drive.google.com/file/d/1108Jh7jRzf7nIhU3sQTj9odwzbd4QVTm/preview" },
+                { src: "https://drive.google.com/file/d/11DDQ-S2IZcalZGBvDcyPDMHaMuvI4p6N/preview" },
+                { src: "https://drive.google.com/file/d/122mLxPSUHKkv05annvDiQYLa7j3O2-_P/preview" },
+                { src: "https://drive.google.com/file/d/12j1YTDB0TaVLD9PfFSmYSxdrGAD4msJN/preview" },
+                { src: "https://drive.google.com/file/d/137xUhCysHVKdMga2bqtETNP5m9tS94Me/preview" },
+                { src: "https://drive.google.com/file/d/13NDJCDZMccCn3Kc1RY0cyf-QdpbhDTP0/preview" },
+                { src: "https://drive.google.com/file/d/13WJZysZGMg5RPRuD25flZr7NnZceOdqk/preview" },
+                { src: "https://drive.google.com/file/d/13aooUzishHcOOS_jn84s4qMla8buu0xc/preview" },
                 // { src: "https://drive.google.com/file/d/13fHaZ79Dc6si_bEht4Zd7KIKzl4hSwUo/preview" },
                 // { src: "https://drive.google.com/file/d/13qG1YtnLQHfSvVvfPL0ueLjoxrO7zqyh/preview" },
                 // { src: "https://drive.google.com/file/d/13tJxep1CyFxizIt_7rZo6feEFeV6B0CQ/preview" },
@@ -604,7 +607,7 @@
             const listContainer = document.getElementById("dynamic-list");
 
             // Titles.forEach(classItem => {
-            for (let i = 1; i <= 15; i++) {
+            for (let i = 1; i <= 10; i++) {
 
                 const listItem = document.createElement("li");
                 const link = document.createElement("a");
