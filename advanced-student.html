@@ -913,16 +913,40 @@
             }
 
             function logout() {
-                sessionStorage.removeItem('advuser')
-                window.location = "index.html"
-                firebase.auth().signOut().then(() => {
-                    // Sign-out successful.
-                    localStorage.removeItem("email");
-                    window.location.href = "login.html";
-                }).catch((error) => {
-                    // An error happened.
-                    console.log(error);
+                const firebaseApp = firebase.initializeApp({
+                    apiKey: "AIzaSyC_17NSBZj7055hemtCvXbt6iAnpefJEjk",
+                    authDomain: "womea-ae77f.firebaseapp.com",
+                    databaseURL: "https://womea-ae77f-default-rtdb.firebaseio.com",
+                    projectId: "womea-ae77f",
+                    storageBucket: "womea-ae77f.appspot.com",
+                    messagingSenderId: "614719223379",
+                    appId: "1:614719223379:web:4d0252a711236c066b78a6"
                 });
+                const auth = firebaseApp.auth();
+                const database = firebase.database();
+                auth.onAuthStateChanged(user => {
+                    const userRef = database.ref(`/users/${user.uid}`);
+                    // userRef.once(id).then(snapshot => {
+                    userRef.update({
+                        loggedIn: false,
+                        lastLoginTimestamp: firebase.database.ServerValue.TIMESTAMP
+                    }).then(() => {
+                        sessionStorage.removeItem('advuser')
+                        // window.location = "index.html"
+                        firebase.auth().signOut().then(() => {
+                            // Sign-out successful.
+                            localStorage.removeItem("email");
+                            window.location.href = "advanced-course-login.html";
+                        }).catch((error) => {
+                            // An error happened.
+                            console.log(error);
+                        });
+
+
+                    })
+
+                })
+
             }
 
             window.onload = function () {
@@ -945,6 +969,8 @@
                     signoutlink.classList.replace("nav-link", "btn")
                     signoutlink.classList.add("btn-success")
                     signoutlink.href = "javascript:logout()"
+
+
                 }
             }
 
