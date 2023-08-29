@@ -71,7 +71,7 @@
                             </span>
                         </a>
                         <a href="index.html" class="navbar-brand logo">
-                            <img src="assets/img/logo/logo.png" class="img-fluid" alt="Logo">
+                            <img  id="Main_logo" src="assets/img/logo/logo.png" class="img-fluid" alt="Logo">
                         </a>
                     </div>
                     <div class="main-menu-wrapper">
@@ -139,7 +139,7 @@
         <div class="main_content h-screen flex justify-center items-center">
 
             <ul class="uk-switcher w-full " id="video_tabs">
-
+               
             </ul>
 
 
@@ -250,6 +250,12 @@
                                     <!-- side title  -->
                                     <ul class="course-curriculum-list" id="dynamic-list"
                                         uk-switcher="connect: #video_tabs; animation: uk-animation-fade">
+                                        <li  id="x-mark" uk-toggle="target: #wrapper ; cls: is-collapse is-active" style="width: fit-content;text-align: right;position: relative;right: -80%;">
+                                            <a>
+                                                x<span class="hidden"></span>
+                                            </a>
+                        
+                                        </li>
 
                                     </ul>
 
