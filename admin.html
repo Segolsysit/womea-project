@@ -6,8 +6,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="admin.css">
+    <link rel="icon" type="image/png" href="assets/img/logo/top1.png" sizes="60*60">
+
     <style>
         .tab {
             margin-top: 10%;
@@ -122,7 +124,7 @@
     </svg> -->
 
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <button class="signout" onclick="Signout()">SignOut</button>
+        <button class="signout" onclick="Signout()" style="cursor: pointer;">SignOut</button>
 
         <div class="container">
             <h2>Register</h2>
@@ -236,12 +238,13 @@
             }
         }
         const firebaseApp = firebase.initializeApp({
-            apiKey: "AIzaSyAFdtO7NYgHb4DbWXfirZpJpA8UDrMfbKs",
-            authDomain: "advanced-course-data-base.firebaseapp.com",
-            projectId: "advanced-course-data-base",
-            storageBucket: "advanced-course-data-base.appspot.com",
-            messagingSenderId: "327666396191",
-            appId: "1:327666396191:web:aec68df5a22197d72af92a"
+            apiKey: "AIzaSyC_17NSBZj7055hemtCvXbt6iAnpefJEjk",
+            authDomain: "womea-ae77f.firebaseapp.com",
+            databaseURL: "https://womea-ae77f-default-rtdb.firebaseio.com",
+            projectId: "womea-ae77f",
+            storageBucket: "womea-ae77f.appspot.com",
+            messagingSenderId: "614719223379",
+            appId: "1:614719223379:web:4d0252a711236c066b78a6"
         });
 
         const auth = firebaseApp.auth();
