@@ -9115,6 +9115,10 @@ header .header_inner,
   line-height: 25px;
 }
 
+#x-mark{
+  display: none;
+}
+
 .message-bubble.me .message-text {
   float: right;
 }
@@ -9484,6 +9488,10 @@ header .header_inner,
 @media (min-width: 1024px) {
   .admin-panel header #logo img {
     display: none;
+  }
+
+  #x-mark{
+    display: block;
   }
 
   .admin-panel header #logo img.logo_inverse {
