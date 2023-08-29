@@ -13,6 +13,13 @@ body {
   height: 100%;
   overflow-x: hidden;
 }
+
+
+#x-mark{
+  visibility: hidden;
+}
+
+
 h1,
 h2,
 h3,
@@ -18890,6 +18897,7 @@ input[type="password"]::-ms-clear {
     padding-left: 20px;
     padding-right: 20px;
   }
+ 
   .header-navbar-rht li.contact-item {
     display: none;
   }
@@ -19738,6 +19746,9 @@ input[type="password"]::-ms-clear {
 @media (max-width: 991.98px) {
   .main-nav li.login-link {
     display: block;
+  }
+  #x-mark{
+    visibility: visible;
   }
   .main-nav {
     padding: 0;
