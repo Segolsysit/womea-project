@@ -19832,6 +19832,7 @@ input[type="password"]::-ms-clear {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: flex;
+    gap: 25px;
   }
   #mobile_btn {
     display: inline-block;
