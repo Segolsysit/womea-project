@@ -25390,4 +25390,13 @@ input[type="password"]::-ms-clear {
 
 }
 
-}
+@media only screen and (max-width: 390px){
+  .header-navbar-rht > li > a {
+      font-size: 5px;
+      /* padding: 3px 5px 3px 5px; */
+      height: 2rem;
+      display: flex;
+      align-items: center;
+      
+  }
+}}
