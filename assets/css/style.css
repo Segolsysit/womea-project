@@ -25391,13 +25391,16 @@ input[type="password"]::-ms-clear {
 
 }
 
-@media only screen and (max-width: 390px){
+@media only screen and (max-width: 400px){
   .header-navbar-rht > li > a {
-      font-size: 5px;
+      font-size: 10px;
       /* padding: 3px 5px 3px 5px; */
       height: 2rem;
       display: flex;
       align-items: center;
       
+  }
+  #Main_logo{
+    display: none;
   }
 }}
