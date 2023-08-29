@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="./assets_video/css/uikit.css">
     <link rel="stylesheet" href="./assets_video/css/style.css">
     <link href="https://unpkg.com/tailwindcss%402.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.svg">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/top1.png">
 
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 
@@ -395,7 +395,7 @@
         userlink.innerText = "My DashBoard"
         userlink.classList.replace("nav-link", "btn")
         userlink.classList.add("btn-primary")
-        userlink.href = "deposit-student-dashboard.html"
+        userlink.href = "advanced-student.html"
 
         signoutlink.innerText = "sign out"
         signoutlink.classList.replace("nav-link", "btn")
@@ -415,12 +415,13 @@
         function logout() {
 
             const firebaseApp = firebase.initializeApp({
-                apiKey: "AIzaSyAFdtO7NYgHb4DbWXfirZpJpA8UDrMfbKs",
-                authDomain: "advanced-course-data-base.firebaseapp.com",
-                projectId: "advanced-course-data-base",
-                storageBucket: "advanced-course-data-base.appspot.com",
-                messagingSenderId: "327666396191",
-                appId: "1:327666396191:web:aec68df5a22197d72af92a"
+                apiKey: "AIzaSyC_17NSBZj7055hemtCvXbt6iAnpefJEjk",
+                authDomain: "womea-ae77f.firebaseapp.com",
+                databaseURL: "https://womea-ae77f-default-rtdb.firebaseio.com",
+                projectId: "womea-ae77f",
+                storageBucket: "womea-ae77f.appspot.com",
+                messagingSenderId: "614719223379",
+                appId: "1:614719223379:web:4d0252a711236c066b78a6"
             });
 
             const auth = firebaseApp.auth();
@@ -452,6 +453,33 @@
 
         }
         window.onload = function () {
+            setTimeout(() => {
+                const firebaseApp = firebase.initializeApp({
+                    apiKey: "AIzaSyC_17NSBZj7055hemtCvXbt6iAnpefJEjk",
+                    authDomain: "womea-ae77f.firebaseapp.com",
+                    databaseURL: "https://womea-ae77f-default-rtdb.firebaseio.com",
+                    projectId: "womea-ae77f",
+                    storageBucket: "womea-ae77f.appspot.com",
+                    messagingSenderId: "614719223379",
+                    appId: "1:614719223379:web:4d0252a711236c066b78a6"
+                });
+                const auth = firebaseApp.auth();
+                const database = firebase.database();
+                auth.onAuthStateChanged(user => {
+                    const userRef = database.ref(`/users/${user.uid}`);
+                    // userRef.once(id).then(snapshot => {
+                    userRef.update({
+                        loggedIn: false,
+                        lastLoginTimestamp: firebase.database.ServerValue.TIMESTAMP
+                    }).then(() => {
+                        sessionStorage.removeItem('advuser')
+                        window.location = "index.html"
+
+                    })
+
+                })
+                console.log('timeout');
+            }, 10000 * 360)
             getusername();
             if (currentuser === null) {
                 window.location = "login.html"
@@ -469,7 +497,7 @@
                 userlink.innerText = "My DashBoard"
                 userlink.classList.replace("nav-link", "btn")
                 userlink.classList.add("btn-primary")
-                userlink.href = "deposit-student-dashboard.html"
+                userlink.href = "advanced-student.html"
 
                 signoutlink.innerText = "sign out"
                 signoutlink.classList.replace("nav-link", "btn")
