@@ -166,7 +166,7 @@
                                     // Update the user's login status and timestamp
                                     userRef.update({
                                         loggedIn: true,
-                                        lastLoginTimestamp: firebase.database.ServerValue.TIMESTAMP
+                                        lastLoginTimestamp: new Date().toLocaleString()
                                     }).then(() => {
                                         window.location = "advanced-student.html"
 
