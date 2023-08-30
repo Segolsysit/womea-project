@@ -9116,7 +9116,7 @@ header .header_inner,
 }
 
 #x-mark{
-  display: none;
+  display: block;
 }
 
 .message-bubble.me .message-text {

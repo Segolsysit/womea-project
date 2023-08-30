@@ -19749,6 +19749,7 @@ input[type="password"]::-ms-clear {
   }
   #x-mark{
     visibility: visible;
+    margin-top: 50px;
   }
   .main-nav {
     padding: 0;
