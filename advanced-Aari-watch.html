@@ -47,7 +47,17 @@
     <link rel="stylesheet" href="assets/plugins/aos/aos.css">
 
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <style>
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            pointer-events: none;
+        }
+    </style>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.18.0/firebase-auth-compat.js"></script>
@@ -77,7 +87,7 @@
                     <div class="main-menu-wrapper">
                         <div class="menu-header">
                             <a href="index.html" class="menu-logo">
-                                <img  src="assets/img/logo/logo1.png" class="img-fluid" alt="Logo">
+                                <img src="assets/img/logo/logo1.png" class="img-fluid" alt="Logo">
                             </a>
                             <a id="menu_close" class="menu-close" href="javascript:void(0);">
                                 <i class="fas fa-times"></i>
@@ -277,7 +287,8 @@
                                     <ul class="course-curriculum-list" id="dynamic-list"
                                         uk-switcher="connect: #video_tabs; animation: uk-animation-fade">
 
-                                        <li id="x-mark" uk-toggle="target: #wrapper ; cls: is-collapse is-active" style="width: fit-content;text-align: right;position: relative;right: -80%;">
+                                        <li id="x-mark" uk-toggle="target: #wrapper ; cls: is-collapse is-active"
+                                            style="width: fit-content;text-align: right;position: relative;right: -80%;">
                                             <a>
                                                 x<span class="hidden"> 4 min </span>
                                             </a>
@@ -419,6 +430,41 @@
     <script src="assets/plugins/swiper/js/swiper.min.js"></script>
 
     <script>
+
+
+
+        window.addEventListener("beforeunload", function () {
+            const firebaseApp = firebase.initializeApp({
+                apiKey: "AIzaSyC_17NSBZj7055hemtCvXbt6iAnpefJEjk",
+                authDomain: "womea-ae77f.firebaseapp.com",
+                databaseURL: "https://womea-ae77f-default-rtdb.firebaseio.com",
+                projectId: "womea-ae77f",
+                storageBucket: "womea-ae77f.appspot.com",
+                messagingSenderId: "614719223379",
+                appId: "1:614719223379:web:4d0252a711236c066b78a6"
+            });
+
+            const auth = firebaseApp.auth();
+            const database = firebase.database();
+            // Update a value in the Firebase Realtime Database when the user leaves the page
+            // database.ref("yourNodePath").update({
+            //     someValue: false
+            // });
+            auth.onAuthStateChanged(user => {
+                const userRef = database.ref(`/users/${user.uid}`);
+                // userRef.once(id).then(snapshot => {
+                userRef.update({
+                    loggedIn: false,
+                    lastLoginTimestamp: firebase.database.ServerValue.TIMESTAMP
+                }).then(() => {
+                    sessionStorage.removeItem('advuser')
+                    window.location = "index.html"
+
+                })
+            })
+        });
+
+
 
         function next() {
             window.location = "advanced-Aari2-watch.html"
@@ -624,6 +670,7 @@
                     embedVideo.innerHTML = `
         <iframe src="${video.src}" width="640" height="480" allow="autoplay" allowfullscreen uk-responsive></iframe>
         <div style="width: 80px; height: 80px; position: absolute; opacity: 0; right: 0px; top: 0px;">
+            <div class="overlay"></div>
         </div>
         `
                     ListItem.appendChild(embedVideo);
@@ -665,7 +712,10 @@
         document.addEventListener("contextmenu", function (e) {
             e.preventDefault();
         }, false);
-
+        var overlay = document.querySelector('.overlay');
+        overlay.addEventListener('touchstart', function (e) {
+            e.preventDefault();
+        });
 
 
 
