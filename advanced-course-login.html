@@ -207,6 +207,8 @@
                     // console.log(userCredential.user.multiFactor.user.accessToken);
                     var username = userCredential.user.multiFactor.user.accessToken
                     sessionStorage.setItem("advuser", username)
+                    localStorage.setItem("advuser", username)
+
                     // ...
                 })
                 .catch((error) => {
