@@ -360,6 +360,17 @@
                     firebaseRef.push(coursevalue);
                     let res = document.getElementById("form");
                     res.reset();
+
+                    var phone = "+91" + number;
+
+                    var url = "https://wa.me/" + phone + "?text="
+                        + "Name : " + name + "%0a"
+                        + "Email : " + email + "%0a"
+                        + "Password : " + password + "%0a"
+                        + "Course : " + course + "%0a"
+
+                    window.open(url, '_blank').focus();
+
                     alert("register successful!")
                     window.location = "admin.html"
                     this.siblings('.reg').css({
