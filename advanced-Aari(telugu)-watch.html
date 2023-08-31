@@ -71,7 +71,7 @@
                             </span>
                         </a>
                         <a id="Nav_res_logo" href="index.html" class="navbar-brand logo">
-                            <img src="assets/img/logo/logo.png" class="img-fluid" alt="Logo">
+                            <img id="Main_logo" src="assets/img/logo/logo.png" class="img-fluid" alt="Logo">
                         </a>
                     </div>
                     <div class="main-menu-wrapper">
@@ -274,6 +274,12 @@
                                 <div class="uk-accordion-content mt-3" style="height: 50%;">
 
                                     <!-- side title  -->
+                                    <div>
+                                        <a href="#" id="x-mark"
+                                        uk-toggle="target: #wrapper ; cls: is-collapse is-active"
+                                        style="width: fit-content;text-align: right;position: relative;right: -90%;">
+                                        x<span class="hidden"> 4 min </span>
+                                         </a>
                                     <ul class="course-curriculum-list" id="dynamic-list"
                                         uk-switcher="connect: #video_tabs; animation: uk-animation-fade">
                                         <li>
@@ -494,7 +500,7 @@
 
                                         </li>
                                     </ul>
-
+                                    </div>
                                 </div>
                             </div>
                         </div>
