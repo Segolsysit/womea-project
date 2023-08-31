@@ -293,9 +293,9 @@
                                         <ul class="course-curriculum-list" id="dynamic-list"
                                             uk-switcher="connect: #video_tabs; animation: uk-animation-fade">
 
-                                        
 
-                                       
+
+
 
 
                                             <li>
@@ -493,7 +493,7 @@
             //     const username = user.Username;
             // }
 
-            currentuser = sessionStorage.getItem('advuser')
+            currentuser = localStorage.getItem('advuser')
         }
 
 
@@ -568,7 +568,7 @@
             }, 10000 * 360)
             getusername();
             if (currentuser === null) {
-                window.location = "login.html"
+                window.location = "advanced-course-login.html"
                 // userlink.innerText = "Login"
                 // userlink.classList.replace("nav-link", "btn")
                 // userlink.classList.add("btn-primary")
