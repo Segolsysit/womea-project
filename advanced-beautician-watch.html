@@ -71,7 +71,7 @@
                             </span>
                         </a>
                         <a href="index.html" class="navbar-brand logo">
-                            <img src="assets/img/logo/logo.png" class="img-fluid" alt="Logo">
+                            <img id="Main_logo" src="assets/img/logo/logo.png" class="img-fluid" alt="Logo">
                         </a>
                     </div>
                     <div class="main-menu-wrapper">
@@ -173,7 +173,8 @@
         <div class="sidebar bg-white">
 
             <!-- slide_menu for mobile -->
-            <span class="btn-close-mobi right-3 left-auto" uk-toggle="target: #wrapper ; cls: is-active"></span>
+            <span class="btn-close-mobi right-3 left-auto" uk-toggle="target: #wrapper ; cls: is-active"><i
+                    class="fa-solid fa-caret-left"></i></span>
 
             <!-- back to home link -->
             <div class="flex justify-between lg:-ml-1 mt-1 mr-2">
@@ -248,11 +249,17 @@
                                 <div class="uk-accordion-content mt-3">
 
                                     <!-- side title  -->
+                                    <div>
+                                          <a href="#" id="x-mark"
+                                            uk-toggle="target: #wrapper ; cls: is-collapse is-active"
+                                            style="width: fit-content;text-align: right;position: relative;right: -90%;">
+                                            x<span class="hidden"> 4 min </span>
+                                        </a>
                                     <ul class="course-curriculum-list" id="dynamic-list"
                                         uk-switcher="connect: #video_tabs; animation: uk-animation-fade">
 
                                     </ul>
-
+                                    </div>
                                 </div>
                             </div>
                         </div>
