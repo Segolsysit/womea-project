@@ -208,7 +208,8 @@
                                                         <p>35% Completed</p>
                                                     </div> -->
                                                     <div class="start-leason d-flex align-items-center">
-                                                        <a onclick="buythiscourse()" class="btn btn-primary">Start
+                                                        <a onclick="buythiscourse()" class="btn btn-primary"
+                                                            id="btn">Start
                                                             Lesson</a>
                                                     </div>
                                                 </div>
@@ -931,11 +932,13 @@
                         loggedIn: false,
                         lastLoginTimestamp: firebase.database.ServerValue.TIMESTAMP
                     }).then(() => {
-                        sessionStorage.removeItem('advuser')
+                        sessionStorage.removeItem('advuser');
+                        localStorage.removeItem("advuser");
+
                         // window.location = "index.html"
                         firebase.auth().signOut().then(() => {
                             // Sign-out successful.
-                            localStorage.removeItem("email");
+                            localStorage.removeItem("advuser");
                             window.location.href = "advanced-course-login.html";
                         }).catch((error) => {
                             // An error happened.
@@ -973,6 +976,8 @@
 
                 }
             }
+
+
 
             function buythiscourse() {
                 // var rzp1 = new Razorpay(options);sss

@@ -191,6 +191,7 @@
                         <th>Password</th>
                         <th>Course</th>
                         <th>Number</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -317,8 +318,11 @@
             <td>${item.password}</td>
             <td>${item.course}</td>
             <td>${item.number}</td>
+           
+
 
         `;
+                            // <td><button onclick="del('${(item.course)}')">Delete</button></td>
                             tableBody.appendChild(row);
                         });
                     }
@@ -336,6 +340,34 @@
 
         }
 
+        function del(mail) {
+            console.log('clicked');
+            let content = mail;
+            console.log(content);
+            const firebaseApp = firebase.initializeApp({
+                apiKey: "AIzaSyC_17NSBZj7055hemtCvXbt6iAnpefJEjk",
+                authDomain: "womea-ae77f.firebaseapp.com",
+                databaseURL: "https://womea-ae77f-default-rtdb.firebaseio.com",
+                projectId: "womea-ae77f",
+                storageBucket: "womea-ae77f.appspot.com",
+                messagingSenderId: "614719223379",
+                appId: "1:614719223379:web:4d0252a711236c066b78a6"
+            });
+            const auth = firebaseApp.auth();
+
+            var uidToDelete = "BwSR0Ya6FYPONxhk2oxBOY737n03";
+
+            auth.deleteUser(uidToDelete)
+                .then(function () {
+                    // User deleted successfully.
+                    console.log('User deleted');
+                })
+                .catch(function (error) {
+                    // An error occurred.
+                    console.error('Error deleting user:', error);
+                });
+        }
+
         function signup() {
             // e.preventDefault()
             let name = document.getElementById('advname').value;
@@ -343,57 +375,72 @@
             let password = document.getElementById('advpassword').value;
             let course = document.getElementById('course').value;
             let number = document.getElementById('number').value;
-            var firebaseRef = firebase.database().ref(`${course}`)
-            var coursevalue = {
-                name: name,
-                email: email,
-                password: password,
-                number: number,
-                course: course
+
+            if (name === "") {
+                alert("enter name Field!")
+            } else if (email === "") {
+                alert("enter the email field!")
+            } else if (password === "") {
+                alert("enter the password field!")
+            } else if (number === "") {
+                alert("enter the number field!")
+            } else if (course === "") {
+                alert("enter the course field!")
             }
+            else {
 
-            console.log(email, password);
-            firebase.auth().createUserWithEmailAndPassword(email, password)
-                .then(function () {
-                    // Signed in 
-                    console.log(course);
-                    firebaseRef.push(coursevalue);
-                    let res = document.getElementById("form");
-                    res.reset();
+                var firebaseRef = firebase.database().ref(`${course}`)
+                var coursevalue = {
+                    name: name,
+                    email: email,
+                    password: password,
+                    number: number,
+                    course: course
+                }
 
-                    var phone = "+91" + number;
+                console.log(email, password);
+                firebase.auth().createUserWithEmailAndPassword(email, password)
+                    .then(function () {
+                        // Signed in 
+                        console.log(course);
+                        firebaseRef.push(coursevalue);
+                        let res = document.getElementById("form");
+                        res.reset();
 
-                    var url = "https://wa.me/" + phone + "?text="
-                        + "Name : " + name + "%0a"
-                        + "Email : " + email + "%0a"
-                        + "Password : " + password + "%0a"
-                        + "Course : " + course + "%0a"
+                        var phone = "+91" + number;
 
-                    window.open(url, '_blank').focus();
+                        var url = "https://wa.me/" + phone + "?text="
+                            + "Name : " + name + "%0a"
+                            + "Email : " + email + "%0a"
+                            + "Password : " + password + "%0a"
+                            + "Course : " + course + "%0a"
 
-                    alert("register successful!")
-                    window.location = "admin.html"
-                    this.siblings('.reg').css({
-                        'transform': 'translateY(40%) scale(5)',
-                        'border-radius': '0',
-                        'width': '100%',
-                        'height': '100%'
-                    }).end();
+                        window.open(url, '_blank').focus();
 
-
-                    reg_btn.siblings('.container h3:nth-of-type(1)').css({
-                        'top': '40%',
-                        'z-index': '8',
-                    }).end().end();
-
-                })
-                .catch((error) => {
-                    console.log(error.code);
-                    console.log(error.message);
-                    // ..
-                });
+                        alert("register successful!")
+                        window.location = "admin.html"
+                        // this.siblings('.reg').css({
+                        //     'transform': 'translateY(40%) scale(5)',
+                        //     'border-radius': '0',
+                        //     'width': '100%',
+                        //     'height': '100%'
+                        // }).end();
 
 
+                        // reg_btn.siblings('.container h3:nth-of-type(1)').css({
+                        //     'top': '40%',
+                        //     'z-index': '8',
+                        // }).end().end();
+
+                    })
+                    .catch((error) => {
+                        console.log(error.code);
+                        alert(error.message);
+                        // ..
+                    });
+
+
+            }
         }
 
         // const dynamicData = [
