@@ -191,7 +191,7 @@
                         <th>Password</th>
                         <th>Course</th>
                         <th>Number</th>
-                        <th>Actions</th>
+                        <!-- <th>Actions</th> -->
                     </tr>
                 </thead>
                 <tbody>
@@ -309,6 +309,8 @@
                         const tableBody = document.querySelector("#dynamic-table tbody");
                         console.log(str);
 
+
+
                         str.forEach(item => {
                             const row = document.createElement("tr");
                             row.innerHTML = `
@@ -325,9 +327,13 @@
                             // <td><button onclick="del('${(item.course)}')">Delete</button></td>
                             tableBody.appendChild(row);
                         });
+
                     }
 
+
                     window.load = populateTable(structure);
+
+
 
                     // console.log(print);
                     // console.log(data[arr[0]].email);
